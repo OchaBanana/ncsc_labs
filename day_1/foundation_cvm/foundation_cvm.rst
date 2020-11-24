@@ -6,7 +6,7 @@ Lab 1c: Foundation from a CVM
 
 Foundation software is installed on each CVM when they are imaged out of the factory. In some case the hardware is sold “Software Only” which means software must be installed “Baremetal”. In this case for remote installs Foundation will need to be installed on a local system in order to image the nodes. Please see also Baremetal steps in Field Installation Guide.
 
-.. role:: redtext
+  .. role:: redtext
     1. Open a web browser to your CVM IP: http://<CVM IP:8000> :redtext:`***USE YOUR ASSIGNED CVM IP***`
     2. Page 1. Start fill form with your Assigned lab Network IP settings provided and hit “Next”
     3. Page 2. Nodes notice your remaining nodes should detect. Because they are previously configured the IPs autofilled but normally out of factory they will require you put your desired IPs. ONLY SELECT YOUR NODE IN THIS LAB. We will be making a single node cluster. Give it a Host name of HOST-<initials>.
