@@ -10,11 +10,18 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Era Setup Labs
-  :name: _era_setup_labs
+  :caption: Day 1 Foundation Lab Remote installation
+  :name: _day_1
   :hidden:
 
-  era_deploy_and_register/era_deploy_and_register
+  day_1/connect_ipmi/connect_ipmi
+  day_1/using_crashcart/using_crashcart
+  day_1/foundation_cvm/foundation_cvm
+  day_1/1_click_upgrade/1_click_upgrade
+  day_1/install_foudation/install_foudation
+  day_1/install_pc/install_pc
+  day_1/creating_built_guide/creating_built_guide
+
 
 .. toctree::
   :maxdepth: 2
