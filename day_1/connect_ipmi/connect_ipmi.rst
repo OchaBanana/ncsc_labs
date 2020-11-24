@@ -28,7 +28,7 @@ Connencting to IPMI:
     - a: “*cluster status*” – shows you the status of your cluster. In our lab the cluster is UP
     - b: “*cluster stop*” – this will disable the cluster
 
-    .. Pro Tip::
+    .. topic:: Pro Tip
 
       If VMs are online you must shut them down use the following commands: acli vm_list (gets the list of vms) acli vm.force_off <name of VM> (forcefully shuts down VM)
 
@@ -41,7 +41,7 @@ Connencting to IPMI:
 
     - d: “*cluster status*” – run again to see “Cluster is currently unconfigured”
 
-    .. Pro Tip::
+    .. topic:: Pro Tip
 
       If cluster completes and still showing as still part of a cluster you can manually set it on each node individually with the following commands:
       *cd /homes/nutanix*
