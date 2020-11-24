@@ -6694,4 +6694,7 @@ button.close {
     display: none !important;
   }
 }
+.red {
+    color:red;
+}
 /*# sourceMappingURL=bootstrap.css.map */
