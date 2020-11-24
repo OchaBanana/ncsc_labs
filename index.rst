@@ -7,8 +7,12 @@
   :hidden:
 
 .. toctree::
+  :titlesonly:
+
+  Day 1
+
+.. toctree::
   :maxdepth: 2
-  :caption: Day 1
   :caption: Lab 1 : Foundation Lab Remote installation
   :name: _day_1
   :hidden:
@@ -78,6 +82,7 @@ Getting Started
 Welcome to the Nutanix NCS Labs!
 
 The goal of the Knowledge Transfer Practical Exam is to generally show that you understand the product but more importantly that you are comfortable enabling your customers with the knowledge to administrate and manage their Nutanix cluster. You will be presenting just a sample of a Knowledge Transfer. For “talking points” You will be assigned Prism Functions randomly the night before via email. While you are presenting your Knowledge Transfer of about 10 minutes the rest of the class will play the role of the customer. They are encouraged to ask questions they may have or just to challenge the presenter with questions a customer would ask.
+
 |
 
 What's New
@@ -91,34 +96,38 @@ Agenda
 ++++++
 
 - Day 1
-  Lab 1: Foundation Lab Remote installation
-    - a: Connect to and using IPMI
-    - b: Using the crashcart network_configuration command
-    - c: Foundation from a CVM
-    - d: 1-Click upgrade of AOS
-    - e: Install Foundation VM on your Laptop (Optional reference Lab)
-    - f: Install Prism Central
-    - g: Creating an As Built Guide
+    - Lab 1: Foundation Lab Remote installation
+        a: Connect to and using IPMI
+        b: Using the crashcart network_configuration command
+        c: Foundation from a CVM
+        d: 1-Click upgrade of AOS
+        e: Install Foundation VM on your Laptop (Optional reference Lab)
+        f: Install Prism Central
+        g: Creating an As Built Guide
 
 - Day 2
-- Lab 2: Data Protection
-    - a: Networking: Bond Modes in AHV
-    - b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
-    - c: Snapshot Local and Recover
-    - d: Self Service Restore SSR
-    - e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
+    - Lab 2: Data Protection
+        a: Networking: Bond Modes in AHV
+        b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
+        c: Snapshot Local and Recover
+        d: Self Service Restore SSR
+        e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
 
 - Day 3
-  - Lab 3: Data Migrations
-    - a: Manually importing ESXi VMs to AHV (Optional reference Lab)
-    - b: Using Move VMs to migrate from ESXi to AHV
+    - Lab 3: Data Migrations
+        a: Manually importing ESXi VMs to AHV (Optional reference Lab)
+        b: Using Move VMs to migrate from ESXi to AHV
 
 - Day 3
+    - Lab 3: Data Migrations
+        a: Manually importing ESXi VMs to AHV (Optional reference Lab)
+        b: Using Move VMs to migrate from ESXi to AHV
+
     - Lab 4: Fit Checks Using Fit Check Tools
-      - a: diagnostics.py
-      - b: X-Ray
-        - c: Collector
-        - d: Nutanix Cluster Check (NCC)
+        a: diagnostics.py
+        b: X-Ray
+        c: Collector
+        d: Nutanix Cluster Check (NCC)
 
 
 Introductions
@@ -140,62 +149,24 @@ VDI - Frame x-lab option:
 
 1. Browse to `Frame x-lab <https://frame.nutanix.com/x/labs>`_
 2. Open desktop
+
    .. figure:: images/xlabs.png
 
 VPN option: Pulse Secure VPN Client
 ..........
 
-   Hosted POC clusters follow a standard naming convention:
-
-- **Cluster Name** - POC\ *XYZ*
-- **Subnet** - 10.**21**.\ *XYZ*\ .0
-- **Cluster IP** - 10.**21**.\ *XYZ*\ .37
-
-If provisioned from the marketing pool:
-
-- **Cluster Name** - MKT\ *XYZ*
-- **Subnet** - 10.**20**.\ *XYZ*\ .0
-- **Cluster IP** - 10.**20**.\ *XYZ*\ .37
-
-For example:
-
-- **Cluster Name** - POC055
-- **Subnet** - 10.21.55.0
-- **Cluster IP** - 10.21.55.37
-
-Throughout the Workshop there are multiple instances where you will need to substitute *XYZ* with the correct octet for your subnet, for example:
-
-.. list-table::
-  :widths: 25 75
-  :header-rows: 1
-
-  * - IP Address
-    - Description
-  * - 10.21.\ *XYZ*\ .37
-    - Nutanix Cluster Virtual IP
-  * - 10.21.\ *XYZ*\ .39
-    - **PC** VM IP, Prism Central
-  * - 10.21.\ *XYZ*\ .40
-    - **DC** VM IP, NTNXLAB.local Domain Controller
-
-Each cluster is configured with 2 VLANs which can be used for VMs:
-
-.. list-table::
-  :widths: 25 25 10 40
-  :header-rows: 1
-
-  * - Network Name
-    - Address
-    - VLAN
-    - DHCP Scope
-  * - Primary
-    - 10.21.\ *XYZ*\ .1/25
-    - 0
-    - 10.21.\ *XYZ*\ .50-10.21.\ *XYZ*\ .124
-  * - Secondary
-    - 10.21.\ *XYZ*\ .129/25
-    - *XYZ1*
-    - 10.21.\ *XYZ*\ .132-10.21.\ *XYZ*\ .253
+1. If client already installed skip to step 5
+2. To download the client, login to https://xlv-uswest1.nutanix.com or https://xlv-useast1.nutanix.com using the supplied user credentials
+3. Download and install client
+4. Logout of the Web UI
+5. Open client and ADD a connection with the following details:
+      Type: Policy Secure (UAC) or Connection Server(VPN)
+      Name: X-Labs - PHX
+      Server URL: xlv-uswest1.nutanix.com
+    OR
+      Type: Policy Secure (UAC) or Connection Server(VPN)
+      Name: X-Labs - RTP
+      Server URL: xlv-useast1.nutanix.com 6. Once setup, login with the supplied credentials
 
 Credentials
 ...........
@@ -248,45 +219,3 @@ Each cluster has a dedicated domain controller VM, **DC**, responsible for provi
   * - SSP Basic Users
     - basicuser01-basicuser25
     - nutanix/4u
-
-Access Instructions
-+++++++++++++++++++
-
-The Nutanix Hosted POC environment can be accessed a number of different ways:
-
-Parallels VDI
-.................
-
-Login to: https://xld-uswest1.nutanix.com (for PHX) or https://xld-useast1.nutanix.com (for RTP)
-
-**Nutanix Employees** - Use your NUTANIXDC credentials
-**Non-Employees** - **Username:** POCxxx-User01 (up to POCxxx-User20), **Password:** *<Provided by Instructor>*
-
-Pulse Secure VPN
-..........................
-
-To download the client: login to https://xlv-uswest1.nutanix.com or https://xlv-useast1.nutanix.com - **Username:** POCxxx-User01 (up to POCxxx-User20), **Password:** *<Provided by Instructor>*
-
-Download and install the client.
-
-In Pulse Secure Client, **Add** a connection:
-
-For PHX:
-
-- **Type** - Policy Secure (UAC) or Connection Server
-- **Name** - X-Labs - PHX
-- **Server URL** - xlv-uswest1.nutanix.com
-
-For RTP:
-
-- **Type** - Policy Secure (UAC) or Connection Server
-- **Name** - X-Labs - RTP
-- **Server URL** - xlv-useast1.nutanix.com
-
-
-Nutanix Version Info
-++++++++++++++++++++
-
-- **AHV Version** - AHV 20170830.185 (5.9+/5.10+)
-- **AOS Version** - 5.10.2
-- **PC Version** - 5.10.2
