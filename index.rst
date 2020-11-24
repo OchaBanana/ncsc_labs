@@ -6,15 +6,9 @@
   :name: _ncsc_labs
   :hidden:
 
-  nscs/ncsc
-
-.. toctree::
-    :titlesonly:
-
-     Day 1
-
 .. toctree::
   :maxdepth: 2
+  :caption: Day 1
   :caption: Lab 1 : Foundation Lab Remote installation
   :name: _day_1
   :hidden:
@@ -62,14 +56,6 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Era Rest APIs
-  :name: _era_rest_apis
-  :hidden:
-
-  era_rest_api/era_rest_api
-
-.. toctree::
-  :maxdepth: 2
   :caption: Optional Labs
   :name: _optional_labs
   :hidden:
@@ -80,7 +66,6 @@
   :name: _appendix
   :hidden:
 
-  appendix/glossary
   tools_vms/windows_tools_vm
   tools_vms/linux_tools_vm
 
@@ -105,7 +90,8 @@ What's New
 Agenda
 ++++++
 
-- Day 1 - Lab 1: Foundation Lab Remote installation
+- Day 1
+  Lab 1: Foundation Lab Remote installation
     - a: Connect to and using IPMI
     - b: Using the crashcart network_configuration command
     - c: Foundation from a CVM
@@ -114,22 +100,25 @@ Agenda
     - f: Install Prism Central
     - g: Creating an As Built Guide
 
-- Day 2 - Lab 2: Data Protection
+- Day 2
+- Lab 2: Data Protection
     - a: Networking: Bond Modes in AHV
     - b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
     - c: Snapshot Local and Recover
     - d: Self Service Restore SSR
     - e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
 
-- Day 3 - Lab 3: Data Migrations
+- Day 3
+  - Lab 3: Data Migrations
     - a: Manually importing ESXi VMs to AHV (Optional reference Lab)
     - b: Using Move VMs to migrate from ESXi to AHV
 
-- Day 3 - Lab 4: Fit Checks Using Fit Check Tools
-    - a: diagnostics.py
-    - b: X-Ray
-    - c: Collector
-    - d: Nutanix Cluster Check (NCC)
+- Day 3
+    - Lab 4: Fit Checks Using Fit Check Tools
+      - a: diagnostics.py
+      - b: X-Ray
+        - c: Collector
+        - d: Nutanix Cluster Check (NCC)
 
 
 Introductions
