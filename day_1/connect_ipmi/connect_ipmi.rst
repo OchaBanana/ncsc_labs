@@ -46,8 +46,9 @@ Connencting to IPMI:
             set it on each node individually with the following commands:
 
         .. code-block:: bash
-            cd /homes/nutanix
-            touch .node_unconfigure
-            genesis restart
+
+          cd /homes/nutanix
+          touch .node_unconfigure
+          genesis restart
 
     - e: “**exit**” to exit the CVM and go back to AHV prompt for next lab
