@@ -29,7 +29,7 @@ Connencting to IPMI:
     - a: “*cluster status*” – shows you the status of your cluster. In our lab the cluster is UP
     - b: “*cluster stop*” – this will disable the cluster
 
-        .. warning::
+        .. hint::
             If VMs are online you must shut them down use the following commands: acli vm_list (gets the list of vms) acli vm.force_off <name of VM> (forcefully shuts down VM)
 
     - c: “*cluster destroy*” – removes all CVMs from cluster This is to put our labs in out of factory state.
@@ -44,7 +44,8 @@ Connencting to IPMI:
         .. warning::
             If cluster completes and still showing as still part of a cluster you can manually
             set it on each node individually with the following commands:
-                .. code-block:: bash
+
+    .. code-block:: bash
                   cd /homes/nutanix
                   touch .node_unconfigure
                   genesis restart
