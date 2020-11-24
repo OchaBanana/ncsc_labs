@@ -18,6 +18,6 @@ Foundation software is installed on each CVM when they are imaged out of the fac
     9. We will now bring up your node as a single node cluster. Login to CVM again via SSH and run command :
 
         .. code-block:: bash
-          cluster -s <cvm_ip> --cluster_function_list=one_node_cluster create
+            cluster -s <cvm_ip> --cluster_function_list=one_node_cluster create
 
     10. When completed. Open a web browser to C IP: `http://<Cluster_IP>` . Use admin with the Prism UI password “Nutanix/4u” provided in the lab. (You may change the password to one you’d like to use)
