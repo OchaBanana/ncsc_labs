@@ -1,7 +1,7 @@
 .. _connect_ipmi:
 
 ---------------------------------
-a: Connect to and using IPMI
+Lab 1a: Connect to and using IPMI
 ---------------------------------
 
 
