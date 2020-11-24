@@ -4,8 +4,8 @@
 a: Connect to and using IPMI
 ---------------------------------
 
-.. topic:: Test
-    Due to Covid-19 **Remote Installations** are now being done with the majority of our customers. This can be done in a few ways. The remote installation workflow is different but can be simplified by manually setting the node IPs. Because manually setting the node IPs covers a much broader situations we will be focusing on these steps in the Labs. Rack and stack and **setting the IPMI IPs via BIOS or ipmitool command** will have to be done by someone ahead of time in order for you to have access to these systems remotely.
+
+Due to Covid-19 **Remote Installations** are now being done with the majority of our customers. This can be done in a few ways. The remote installation workflow is different but can be simplified by manually setting the node IPs. Because manually setting the node IPs covers a much broader situations we will be focusing on these steps in the Labs. Rack and stack and **setting the IPMI IPs via BIOS or ipmitool command** will have to be done by someone ahead of time in order for you to have access to these systems remotely.
 
 .. note::
 
@@ -29,23 +29,24 @@ Connencting to IPMI:
     - a: “*cluster status*” – shows you the status of your cluster. In our lab the cluster is UP
     - b: “*cluster stop*” – this will disable the cluster
 
-        .. topic:: Pro Tip
+        .. note::
             If VMs are online you must shut them down use the following commands: acli vm_list (gets the list of vms) acli vm.force_off <name of VM> (forcefully shuts down VM)
 
     - c: “*cluster destroy*” – removes all CVMs from cluster This is to put our labs in out of factory state.
 
-    .. note::
+        .. note::
 
-      This is destructive to existing production data. You would not want to do this command unless you are prepared to lose your data still on a cluster.
+          This is destructive to existing production data. You would not want to do this command unless you are prepared to lose your data still on a cluster.
 
 
     - d: “*cluster status*” – run again to see “Cluster is currently unconfigured”
 
-        .. topic:: Pro Tip
+        .. note::
             If cluster completes and still showing as still part of a cluster you can manually
             set it on each node individually with the following commands:
-            *cd /homes/nutanix*
-            *touch .node_unconfigure*
-            *genesis restart*
+                .. code-block:: bash
+                    cd /homes/nutanix
+                    touch .node_unconfigure
+                    genesis restart
 
     - e: “**exit**” to exit the CVM and go back to AHV prompt for next lab
