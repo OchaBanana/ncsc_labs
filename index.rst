@@ -11,9 +11,14 @@
 .. toctree::
   :maxdepth: 2
   :caption: Day 1
-            Lab 1 : Foundation Lab Remote installation
   :name: _day_1
   :hidden:
+
+  .. toctree::
+    :maxdepth: 2
+    :caption: Lab 1 : Foundation Lab Remote installation
+    :name: _day_1
+    :hidden:
 
   day_1/connect_ipmi/connect_ipmi
   day_1/using_crashcart/using_crashcart
@@ -38,22 +43,23 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Era Postgres Labs
-  :name: _era_postgres_labs
+  :caption: Day 3
+  :name: _day_3
   :hidden:
 
-  era_provision_postgresdb/era_provision_postgresdb
-  era_clone_postgresdb/era_clone_postgresdb
+  day_3/manually_importing/manually_importing
+  day_3/using_move/using_move
 
 .. toctree::
   :maxdepth: 2
-  :caption: Era MSSQL Labs
-  :name: _era_mssql_labs
+  :caption: Day 3
+  :name: _day_3
   :hidden:
 
-  era_create_mssql_server/era_create_mssql_server
-  era_register_mssql_dbs/era_register_mssql_dbs
-  era_clone_mssqldb/era_clone_mssqldb
+  day_3/diagnostics/diagnostics
+  day_3/xray/xray
+  day_3/collector/collector
+  day_3/ncc/ncc
 
 .. toctree::
   :maxdepth: 2
@@ -116,21 +122,23 @@ Agenda
     - f: Install Prism Central
     - g: Creating an As Built Guide
 
+- Day 2 - Lab 2 : Data Protection
+    - a: Networking: Bond Modes in AHV
+    - b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
+    - c: Snapshot Local and Recover
+    - d: Self Service Restore SSR
+    - e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
 
-- Nutanix Era Labs
-    - Era: Deploy and Register
-    - Era: Deploy Oracle DB
-    - Era: Patching Oracle DB
-    - Era: Admin Oracle DB
-    - Era: Provision Postgres DB
-    - Era: Clone Postgres DB
-    - Era: Create MSSQL Server
-    - Era: Register MSSQL Databases
-    - Era: Clone MSSQL DB
-    - Era: REST API Explorer
+- Day 3 - Lab 3 : Data Migrations
+    - a: Manually importing ESXi VMs to AHV (Optional reference Lab)
+    - b: Using Move VMs to migrate from ESXi to AHV
 
-- Optional Labs
-    - SSHKey Creation
+- Day 3 - Lab 4 : Fit Checks Using Fit Check Tools
+    - a: diagnostics.py
+    - b: X-Ray
+    - c: Collector
+    - d: Nutanix Cluster Check (NCC)
+
 
 Introductions
 +++++++++++++
