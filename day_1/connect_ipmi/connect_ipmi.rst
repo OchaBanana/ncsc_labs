@@ -29,7 +29,6 @@ Connencting to IPMI:
     - b: “*cluster stop*” – this will disable the cluster
 
     .. topic:: Pro Tip
-
       If VMs are online you must shut them down use the following commands: acli vm_list (gets the list of vms) acli vm.force_off <name of VM> (forcefully shuts down VM)
 
     - c: “*cluster destroy*” – removes all CVMs from cluster This is to put our labs in out of factory state.
@@ -42,7 +41,6 @@ Connencting to IPMI:
     - d: “*cluster status*” – run again to see “Cluster is currently unconfigured”
 
     .. topic:: Pro Tip
-
       If cluster completes and still showing as still part of a cluster you can manually set it on each node individually with the following commands:
       *cd /homes/nutanix*
       *touch .node_unconfigure*
