@@ -1,12 +1,6 @@
 .. title:: NCSC Labs
 
 .. toctree::
-  :maxdepth: 2
-  :caption: NCSC Labs
-  :name: _ncsc_labs
-  :hidden:
-
-.. toctree::
   :titlesonly:
 
   Day 1
