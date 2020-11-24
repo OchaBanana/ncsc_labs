@@ -14,11 +14,11 @@
   :name: _day_1
   :hidden:
 
-  .. toctree::
-    :maxdepth: 2
-    :caption: Lab 1 : Foundation Lab Remote installation
-    :name: _day_1
-    :hidden:
+.. toctree::
+  :maxdepth: 2
+  :caption: Lab 1 : Foundation Lab Remote installation
+  :name: _day_1
+  :hidden:
 
   day_1/connect_ipmi/connect_ipmi
   day_1/using_crashcart/using_crashcart
@@ -97,6 +97,7 @@ Welcome to the Nutanix NCS Labs!
 
 The goal of the Knowledge Transfer Practical Exam is to generally show that you understand the product but more importantly that you are comfortable enabling your customers with the knowledge to administrate and manage their Nutanix cluster. You will be presenting just a sample of a Knowledge Transfer. For “talking points” You will be assigned Prism Functions randomly the night before via email. While you are presenting your Knowledge Transfer of about 10 minutes the rest of the class will play the role of the customer. They are encouraged to ask questions they may have or just to challenge the presenter with questions a customer would ask.
 
+
 What's New
 ++++++++++
 
@@ -113,7 +114,7 @@ Resources
 Agenda
 ++++++
 
-- Day 1 - Lab 1 : Foundation Lab Remote installation
+- Day 1 - Lab 1: Foundation Lab Remote installation
     - a: Connect to and using IPMI
     - b: Using the crashcart network_configuration command
     - c: Foundation from a CVM
@@ -122,18 +123,18 @@ Agenda
     - f: Install Prism Central
     - g: Creating an As Built Guide
 
-- Day 2 - Lab 2 : Data Protection
+- Day 2 - Lab 2: Data Protection
     - a: Networking: Bond Modes in AHV
     - b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
     - c: Snapshot Local and Recover
     - d: Self Service Restore SSR
     - e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
 
-- Day 3 - Lab 3 : Data Migrations
+- Day 3 - Lab 3: Data Migrations
     - a: Manually importing ESXi VMs to AHV (Optional reference Lab)
     - b: Using Move VMs to migrate from ESXi to AHV
 
-- Day 3 - Lab 4 : Fit Checks Using Fit Check Tools
+- Day 3 - Lab 4: Fit Checks Using Fit Check Tools
     - a: diagnostics.py
     - b: X-Ray
     - c: Collector
@@ -146,21 +147,25 @@ Introductions
 - Name
 - Familiarity with Nutanix
 
-Initial Setup
-+++++++++++++
-
-- Take note of the *Passwords* being used.
-- Log into your virtual desktops (connection info below)
-
 Environment Details
 +++++++++++++++++++
 
-Nutanix Workshops are intended to be run in the Nutanix Hosted POC environment. Your cluster will be provisioned with all necessary images, networks, and VMs required to complete the exercises.
+Each student will be assigned a Remote lab for at least 48hrs. You should get an email with all the IPs and logon Credentials to access your labs.
 
-Networking
+Lab Access Methods
+++++++++++++++++++
+
+VDI - Frame x-lab option:
 ..........
 
-Hosted POC clusters follow a standard naming convention:
+1. Browse to https://frame.nutanix.com/x/labs
+2. Open desktop
+   .. figure:: images/xlabs.png
+
+VPN option: Pulse Secure VPN Client
+..........
+
+   Hosted POC clusters follow a standard naming convention:
 
 - **Cluster Name** - POC\ *XYZ*
 - **Subnet** - 10.**21**.\ *XYZ*\ .0
