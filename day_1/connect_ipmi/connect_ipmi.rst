@@ -26,7 +26,7 @@ Connencting to IPMI:
     5. To login to the local CVM use the internal IP “ssh nutanix@192.168.5.2”
     6. Login with your CVM Lab Assigned Password
 
-.. role:: redtext
+    .. role:: redtext
     7. :red:`(FROM NODE A ONLY, for team labs only one person should do this step)` Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory. To do so run the following commands:
 
         - a: “*cluster status*” – shows you the status of your cluster. In our lab the cluster is UP
