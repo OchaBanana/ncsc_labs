@@ -4,7 +4,8 @@
 a: Connect to and using IPMI
 ---------------------------------
 
-Due to Covid-19 **Remote Installations** are now being done with the majority of our customers. This can be done in a few ways. The remote installation workflow is different but can be simplified by manually setting the node IPs. Because manually setting the node IPs covers a much broader situations we will be focusing on these steps in the Labs. Rack and stack and **setting the IPMI IPs via BIOS or ipmitool command** will have to be done by someone ahead of time in order for you to have access to these systems remotely.
+::
+  Due to Covid-19 **Remote Installations** are now being done with the majority of our customers. This can be done in a few ways. The remote installation workflow is different but can be simplified by manually setting the node IPs. Because manually setting the node IPs covers a much broader situations we will be focusing on these steps in the Labs. Rack and stack and **setting the IPMI IPs via BIOS or ipmitool command** will have to be done by someone ahead of time in order for you to have access to these systems remotely.
 
 .. note::
 
@@ -43,10 +44,10 @@ Connencting to IPMI:
     .. text-block::
       If cluster completes and still showing as still part of a cluster you can manually set it on each node individually with the following commands:
 
-.. code-block:: bash
+      .. code-block:: bash
 
-      cd /homes/nutanix
-      touch .node_unconfigure
-      genesis restart
+        cd /homes/nutanix
+        touch .node_unconfigure
+        genesis restart
 
     - e: “**exit**” to exit the CVM and go back to AHV prompt for next lab
