@@ -16,6 +16,7 @@ Foundation software is installed on each CVM when they are imaged out of the fac
     7. On 6. IPMI only on baremetal installation you would you need this step. When using the factory image we can skip this and hit “Start”
     8. Explore Logs to see live scripts running from Foundation. Estimated time 1-5 minutes to complete
     9. We will now bring up your node as a single node cluster. Login to CVM again via SSH and run command :
+
     .. code-block:: bash
       cluster -s <cvm_ip> --cluster_function_list=one_node_cluster create
 
