@@ -9,10 +9,9 @@
   nscs/ncsc
 
 .. toctree::
-  :maxdepth: 2
-  :caption: Day 1
-  :name: _day_1
-  :hidden:
+    :titlesonly:
+
+     Day 1
 
 .. toctree::
   :maxdepth: 2
@@ -75,8 +74,6 @@
   :name: _optional_labs
   :hidden:
 
-
-
 .. toctree::
   :maxdepth: 2
   :caption: Appendix
@@ -96,7 +93,7 @@ Getting Started
 Welcome to the Nutanix NCS Labs!
 
 The goal of the Knowledge Transfer Practical Exam is to generally show that you understand the product but more importantly that you are comfortable enabling your customers with the knowledge to administrate and manage their Nutanix cluster. You will be presenting just a sample of a Knowledge Transfer. For “talking points” You will be assigned Prism Functions randomly the night before via email. While you are presenting your Knowledge Transfer of about 10 minutes the rest of the class will play the role of the customer. They are encouraged to ask questions they may have or just to challenge the presenter with questions a customer would ask.
-
+|
 
 What's New
 ++++++++++
@@ -104,12 +101,6 @@ What's New
 - Workshop updated for the following software versions:
     - AOS 5.18.x
     - PC 2020.x
-
-Resources
-+++++++++
-
-- `Era Software Download <https://portal.nutanix.com/#/page/releases/eraDetails>`_
-- `Era User Guide <https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Era-User-Guide-v10:Nutanix-Era-User- Guide-v10>`_
 
 Agenda
 ++++++
@@ -158,7 +149,7 @@ Lab Access Methods
 VDI - Frame x-lab option:
 ..........
 
-1. Browse to https://frame.nutanix.com/x/labs
+1. Browse to `Frame x-lab <https://frame.nutanix.com/x/labs>`_
 2. Open desktop
    .. figure:: images/xlabs.png
 
