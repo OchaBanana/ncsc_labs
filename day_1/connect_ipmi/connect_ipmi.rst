@@ -45,7 +45,7 @@ Connencting to IPMI:
             If cluster completes and still showing as still part of a cluster you can manually
             set it on each node individually with the following commands:
 
-    .. code-block:: bash
+.. code-block:: bash
                   cd /homes/nutanix
                   touch .node_unconfigure
                   genesis restart
