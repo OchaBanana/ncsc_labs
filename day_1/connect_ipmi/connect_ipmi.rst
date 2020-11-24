@@ -13,7 +13,7 @@ Due to Covid-19 **Remote Installations** are now being done with the majority of
 Connencting to IPMI:
 ..........
 
-1. Open a web browser to your IPMI IP: http://<IPMI IP> USE YOUR ASSIGNED NODE(S)
+1. Open a web browser to your IPMI IP: `http://<IPMI IP> <internal_>`_ USE YOUR ASSIGNED NODE(S)
     - a. User: ADMIN Password :ADMIN
 
 2. Click Remote Console
@@ -25,15 +25,21 @@ Connencting to IPMI:
 5. To login to the local CVM use the internal IP “ssh nutanix@192.168.5.2”
 6. Login with your CVM Lab Assigned Password
 7. (FROM NODE A ONLY, for team labs only one person should do this step) Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory. To do so run the following commands:
-    - a. “cluster status” – shows you the status of your cluster. In our lab the cluster is UP
-    - b. “cluster stop” – this will disable the cluster
+    - a: “*cluster status*” – shows you the status of your cluster. In our lab the cluster is UP
+    - b: “*cluster stop*” – this will disable the cluster
 
     .. Pro Tip::
 
       If VMs are online you must shut them down use the following commands: acli vm_list (gets the list of vms) acli vm.force_off <name of VM> (forcefully shuts down VM)
 
-    - c. “cluster destroy” – removes all CVMs from cluster This is to put our labs in out of factory state. NOTE: This is destructive to existing production data. You would not want to do this command unless you are prepared to lose your data still on a cluster.
-    - d. “cluster status” – run again to see “Cluster is currently unconfigured”
+    - c: “*cluster destroy*” – removes all CVMs from cluster This is to put our labs in out of factory state.
+
+    .. note::
+
+      This is destructive to existing production data. You would not want to do this command unless you are prepared to lose your data still on a cluster.
+
+
+    - d: “*cluster status*” – run again to see “Cluster is currently unconfigured”
 
     .. Pro Tip::
 
@@ -42,4 +48,4 @@ Connencting to IPMI:
       *touch .node_unconfigure*
       *genesis restart*
 
-    - e. **“exit”** to exit the CVM and go back to AHV prompt for next lab
+    - e: “**exit**” to exit the CVM and go back to AHV prompt for next lab
