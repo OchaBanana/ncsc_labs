@@ -145,7 +145,7 @@ VDI - Frame x-lab option:
 1. Browse to `Frame x-lab <https://frame.nutanix.com/x/labs>`_
 2. Open desktop
 
-   .. figure:: images/xlabs.png
+    .. figure:: images/xlabs.png
 
 VPN option: Pulse Secure VPN Client
 ..........
@@ -156,17 +156,17 @@ VPN option: Pulse Secure VPN Client
 4. Logout of the Web UI
 5. Open client and **ADD** a connection with the following details:
 
-For PHX:
+    For PHX:
 
-- **Type** - Policy Secure (UAC) or Connection Server
-- **Name** - X-Labs - PHX
-- **Server URL** - xlv-uswest1.nutanix.com
+    - **Type** - Policy Secure (UAC) or Connection Server
+    - **Name** - X-Labs - PHX
+    - **Server URL** - xlv-uswest1.nutanix.com
 
-For RTP:
+    For RTP:
 
-- **Type** - Policy Secure (UAC) or Connection Server
-- **Name** - X-Labs - RTP
-- **Server URL** - xlv-useast1.nutanix.com
+    - **Type** - Policy Secure (UAC) or Connection Server
+    - **Name** - X-Labs - RTP
+    - **Server URL** - xlv-useast1.nutanix.com
 
 6. Once setup, login with the supplied credentials
 
