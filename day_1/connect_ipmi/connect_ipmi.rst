@@ -13,9 +13,7 @@ Due to Covid-19 **Remote Installations** are now being done with the majority of
 Connencting to IPMI:
 ..........
 
-.. role:: red
-
-1. Open a web browser to your IPMI IP: http://<IPMI IP> :red:`USE YOUR ASSIGNED NODE(S)`
+1. Open a web browser to your IPMI IP: http://<IPMI IP> USE YOUR ASSIGNED NODE(S)
     - a. User: ADMIN Password :ADMIN
 
 2. Click Remote Console
@@ -26,10 +24,7 @@ Connencting to IPMI:
 4. Login with your AHV Host “root” user Lab Assigned Password
 5. To login to the local CVM use the internal IP “ssh nutanix@192.168.5.2”
 6. Login with your CVM Lab Assigned Password
-
-.. role:: red
-
-7. :red:`(FROM NODE A ONLY, for team labs only one person should do this step)` Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory. To do so run the following commands:
+7. (FROM NODE A ONLY, for team labs only one person should do this step) Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory. To do so run the following commands:
     - a. “cluster status” – shows you the status of your cluster. In our lab the cluster is UP
     - b. “cluster stop” – this will disable the cluster
 
@@ -42,5 +37,9 @@ Connencting to IPMI:
 
     .. Pro Tip::
 
-      If cluster completes and still showing as still part of a cluster you can manually set it on each node individually with the following commands: *cd /homes/nutanix*
-      
+      If cluster completes and still showing as still part of a cluster you can manually set it on each node individually with the following commands:
+      *cd /homes/nutanix*
+      *touch .node_unconfigure*
+      *genesis restart*
+
+    - e. **“exit”** to exit the CVM and go back to AHV prompt for next lab
