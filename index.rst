@@ -10,7 +10,8 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Day 1 Foundation Lab Remote installation
+  :caption: Day 1
+            Lab 1 : Foundation Lab Remote installation
   :name: _day_1
   :hidden:
 
@@ -25,14 +26,15 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Era Oracle Labs
-  :name: _era_oracle_labs
+  :caption: Day 2 Data Protection
+  :name: _day_2
   :hidden:
 
-  deploy_oracle/deploy_oracle
-  deploy_oracle_era/deploy_oracle_era
-  patching_oracle/patching_oracle
-  admin_oracle/admin_oracle
+  day_2/bond_modes/bond_modes
+  day_2/assigning_vlan/assigning_vlan
+  day_2/snapshot/snapshot
+  day_2/ssr/ssr
+  day_2/replication/replication
 
 .. toctree::
   :maxdepth: 2
@@ -85,21 +87,16 @@
 Getting Started
 ---------------
 
-Welcome to the Nutanix Era Bootcamp!
+Welcome to the Nutanix NCS Labs!
 
-Nutanix Era is a software suite that automates and simplifies database administration – bringing One Click simplicity and invisible operations to database provisioning and lifecycle management (LCM).
-
-With One Click database provisioning and Copy Data Management (CDM) as its first services, Nutanix Era enables DBAs to provision, clone, refresh, and backup their databases to any point in time. Line of business applications in every vertical depend on databases, providing use cases in both production and non-production environments.
-
-This workbook accompanies an instructor-led session that introduces Nutanix Era and many common management tasks. Each section has a lesson and an exercise to give you hands-on practice. The instructor explains the exercises and answers any additional questions that you may have.
+The goal of the Knowledge Transfer Practical Exam is to generally show that you understand the product but more importantly that you are comfortable enabling your customers with the knowledge to administrate and manage their Nutanix cluster. You will be presenting just a sample of a Knowledge Transfer. For “talking points” You will be assigned Prism Functions randomly the night before via email. While you are presenting your Knowledge Transfer of about 10 minutes the rest of the class will play the role of the customer. They are encouraged to ask questions they may have or just to challenge the presenter with questions a customer would ask.
 
 What's New
 ++++++++++
 
 - Workshop updated for the following software versions:
-    - AOS & PC 5.10.x
-
-- Optional Lab Updates:
+    - AOS 5.18.x
+    - PC 2020.x
 
 Resources
 +++++++++
@@ -109,6 +106,16 @@ Resources
 
 Agenda
 ++++++
+
+- Day 1 - Lab 1 : Foundation Lab Remote installation
+    - a: Connect to and using IPMI
+    - b: Using the crashcart network_configuration command
+    - c: Foundation from a CVM
+    - d: 1-Click upgrade of AOS
+    - e: Install Foundation VM on your Laptop (Optional reference Lab)
+    - f: Install Prism Central
+    - g: Creating an As Built Guide
+
 
 - Nutanix Era Labs
     - Era: Deploy and Register
