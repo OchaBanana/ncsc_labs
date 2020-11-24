@@ -97,37 +97,32 @@ Agenda
 
 - Day 1
     - Lab 1: Foundation Lab Remote installation
-        a: Connect to and using IPMI
-        b: Using the crashcart network_configuration command
-        c: Foundation from a CVM
-        d: 1-Click upgrade of AOS
-        e: Install Foundation VM on your Laptop (Optional reference Lab)
-        f: Install Prism Central
-        g: Creating an As Built Guide
+        - a: Connect to and using IPMI
+        - b: Using the crashcart network_configuration command
+        - c: Foundation from a CVM
+        - d: 1-Click upgrade of AOS
+        - e: Install Foundation VM on your Laptop (Optional reference Lab)
+        - f: Install Prism Central
+        - g: Creating an As Built Guide
 
 - Day 2
     - Lab 2: Data Protection
-        a: Networking: Bond Modes in AHV
-        b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
-        c: Snapshot Local and Recover
-        d: Self Service Restore SSR
-        e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
+        - a: Networking: Bond Modes in AHV
+        - b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
+        - c: Snapshot Local and Recover
+        - d: Self Service Restore SSR
+        - e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
 
 - Day 3
     - Lab 3: Data Migrations
-        a: Manually importing ESXi VMs to AHV (Optional reference Lab)
-        b: Using Move VMs to migrate from ESXi to AHV
-
-- Day 3
-    - Lab 3: Data Migrations
-        a: Manually importing ESXi VMs to AHV (Optional reference Lab)
-        b: Using Move VMs to migrate from ESXi to AHV
+        - a: Manually importing ESXi VMs to AHV (Optional reference Lab)
+        - b: Using Move VMs to migrate from ESXi to AHV
 
     - Lab 4: Fit Checks Using Fit Check Tools
-        a: diagnostics.py
-        b: X-Ray
-        c: Collector
-        d: Nutanix Cluster Check (NCC)
+        - a: Diagnostics.py
+        - b: X-Ray
+        - c: Collector
+        - d: Nutanix Cluster Check (NCC)
 
 
 Introductions
@@ -159,14 +154,21 @@ VPN option: Pulse Secure VPN Client
 2. To download the client, login to https://xlv-uswest1.nutanix.com or https://xlv-useast1.nutanix.com using the supplied user credentials
 3. Download and install client
 4. Logout of the Web UI
-5. Open client and ADD a connection with the following details:
-      Type: Policy Secure (UAC) or Connection Server(VPN)
-      Name: X-Labs - PHX
-      Server URL: xlv-uswest1.nutanix.com
-    OR
-      Type: Policy Secure (UAC) or Connection Server(VPN)
-      Name: X-Labs - RTP
-      Server URL: xlv-useast1.nutanix.com 6. Once setup, login with the supplied credentials
+5. Open client and **ADD** a connection with the following details:
+
+For PHX:
+
+- **Type** - Policy Secure (UAC) or Connection Server
+- **Name** - X-Labs - PHX
+- **Server URL** - xlv-uswest1.nutanix.com
+
+For RTP:
+
+- **Type** - Policy Secure (UAC) or Connection Server
+- **Name** - X-Labs - RTP
+- **Server URL** - xlv-useast1.nutanix.com
+
+6. Once setup, login with the supplied credentials
 
 Credentials
 ...........
