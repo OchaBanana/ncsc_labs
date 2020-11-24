@@ -13,7 +13,7 @@ Due to Covid-19 **Remote Installations** are now being done with the majority of
 Connencting to IPMI:
 ..........
 
-1. Open a web browser to your IPMI IP: `http://<IPMI IP> <internal_>`_ USE YOUR ASSIGNED NODE(S)
+1. Open a web browser to your IPMI IP: `http://<IPMI IP>` USE YOUR ASSIGNED NODE(S)
     - a. User: ADMIN Password :ADMIN
 
 2. Click Remote Console
