@@ -1,7 +1,7 @@
 .. _using_crashcart:
 
 ---------------------------------------------------------
-b: Using the crashcart network_configuration command
+Lab 1b: Using the crashcart network_configuration command
 ---------------------------------------------------------
 
 In a remote install or deployment the IPMI was set ahead of time for remote access this command will now be use to set the HOST and CVM IP as well as Network settings.
