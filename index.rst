@@ -1,9 +1,8 @@
 .. title:: NCSC Labs
 
 .. toctree::
-  :titlesonly:
-
-  Day 1
+  :maxdepth: 2
+  :caption: Day 1
 
 .. toctree::
   :maxdepth: 2
