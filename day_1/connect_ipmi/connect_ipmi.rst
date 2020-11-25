@@ -14,7 +14,7 @@ Due to Covid-19 **Remote Installations** are now being done with the majority of
 Connencting to IPMI:
 ..........
 
-  .. raw:: html
+    .. raw:: html
     <div>1. Open a web browser to your IPMI IP: \http://<IPMI IP>/</div> <font color="red">USE YOUR ASSIGNED NODE(S)</font>
         <div>- a. User: ADMIN Password :ADMIN</div>
 
