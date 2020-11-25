@@ -14,6 +14,12 @@ Due to Covid-19 **Remote Installations** are now being done with the majority of
 Connencting to IPMI:
 ..........
 
+
+.. raw:: html
+
+  <strong><font color="red">Only deploy the VM once, it does not need to be cleaned up as part of any lab completion.</font></strong>
+
+
       .. raw:: html
         <strong><font color="red">1. Open a web browser to your IPMI IP: `http://<IPMI IP>`USE YOUR ASSIGNED NODE(S)</font></strong>
 
