@@ -14,21 +14,18 @@ Due to Covid-19 **Remote Installations** are now being done with the majority of
 Connencting to IPMI:
 ..........
 
-
-      .. raw:: html
-
-        1. Open a web browser to your IPMI IP: `http://<IPMI IP>`<strong><font color="red">USE YOUR ASSIGNED NODE(S)</font></strong>
-            <br>- a. User: ADMIN Password :ADMIN</br>
+    1. Open a web browser to your IPMI IP: `http://<IPMI IP>`**USE YOUR ASSIGNED NODE(S)**
+        - a. User: ADMIN Password :ADMIN
 
     2. Click Remote Console
 
 .. figure:: images/1_remote_console.png
 
-  3. Click iKVM/HTML5 to get to the console of the node (AHV).
-  4. Login with your AHV Host “root” user Lab Assigned Password
-  5. To login to the local CVM use the internal IP “ssh nutanix@192.168.5.2”
-  6. Login with your CVM Lab Assigned Password
-  7. (FROM NODE A ONLY, for team labs only one person should do this step) Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory. To do so run the following commands:
+    3. Click iKVM/HTML5 to get to the console of the node (AHV).
+    4. Login with your AHV Host “root” user Lab Assigned Password
+    5. To login to the local CVM use the internal IP “ssh nutanix@192.168.5.2”
+    6. Login with your CVM Lab Assigned Password
+    7. **(FROM NODE A ONLY, for team labs only one person should do this step)** Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory. To do so run the following commands:
 
         - a: “*cluster status*” – shows you the status of your cluster. In our lab the cluster is UP
         - b: “*cluster stop*” – this will disable the cluster
