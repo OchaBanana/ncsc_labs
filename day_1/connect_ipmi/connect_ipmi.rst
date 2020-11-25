@@ -26,7 +26,7 @@ Connencting to IPMI:
         - a. User: ADMIN Password :ADMIN
     2. Click Remote Console
 
-    .. figure:: images/1_remote_console.png
+.. figure:: images/1_remote_console.png
 
     3. Click iKVM/HTML5 to get to the console of the node (AHV).
     4. Login with your AHV Host “root” user Lab Assigned Password
