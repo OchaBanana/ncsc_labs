@@ -13,8 +13,8 @@ To determine the proper upgrade path from your current release to the target rel
 
 .. note::
 
-This will and detect online if there is a later version of the LTS or STS version of AOS currently running in the cluster. If you want to go from change between LTS and STS you may have to up load the binaries manually. IMPORTANT: To determine the proper upgrade path from your current release to the target release, please check the `Upgrade Paths https://portal.nutanix.com/#/page/upgradePaths`_
+This will and detect online if there is a later version of the LTS or STS version of AOS currently running in the cluster. If you want to go from change between LTS and STS you may have to up load the binaries manually. IMPORTANT: To determine the proper upgrade path from your current release to the target release, please check the `Upgrade Paths <https://portal.nutanix.com/#/page/upgradePaths>`_
 
 3. Download the needed files. To manually download the software files are available on Portal.nutanix.com
-4. Click “Upgrade” then “Upgrade Now.
+4. Click “**Upgrade**” then “Upgrade Now.
 5. Notice you can click “Close” and go to tasks and watch all the detailed tasks running in the background.
