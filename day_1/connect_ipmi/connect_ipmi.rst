@@ -15,10 +15,11 @@ Connencting to IPMI:
 ..........
 
 
-    .. raw:: html
+      .. raw:: html
 
         1. Open a web browser to your IPMI IP: `http://<IPMI IP>`<strong><font color="red">USE YOUR ASSIGNED NODE(S)</font></strong>
             <br>- a. User: ADMIN Password :ADMIN</br>
+            
     2. Click Remote Console
 
 .. figure:: images/1_remote_console.png
