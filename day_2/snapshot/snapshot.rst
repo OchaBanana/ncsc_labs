@@ -24,7 +24,7 @@ Capabilities in the Nutanix solution
         - choose the cloned VM you created in the :ref:`windows_vm`
         - choose “Protect Selected Entities” click Next
     - c. Click “New Schedule” Setup a schedule for the protection domain
-        - choose “Repeat every “1” day”
+        - choose “**Repeat every “1” day**”
         - Create Schedule
         - **Close**
     - d. Simulate a few days of snapshots by selecting the **Async DR** you created in table view
