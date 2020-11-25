@@ -8,7 +8,7 @@ Create a Remote Site
 .........
 
   1) From Data Protection Click “**Remote Site**” and select “**Physical Cluster**”
-  2) Give Remote Site a name “<*Your Initials*-REMOTE>
+  2) Give Remote Site a name “<*Your Initials*-REMOTE>”
   3) Choose Capabilities “**Disaster Recovery**” this will allow Remote Recovery
   4) Enter the IP address of your partners cluster and choose “**Add Site**”
   5) Choose Cluster to Cluster network mapping
