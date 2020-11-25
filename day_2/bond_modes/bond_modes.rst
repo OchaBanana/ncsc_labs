@@ -18,7 +18,8 @@ Changing bond from Active/backup to balance-slb
 
   ssh root@192.168.5.1 "ovs-appctl bond/show br0-up"
 
-    **Notice** the bond_mode should default to **active-backup**
+**Notice** the bond_mode should default to **active-backup**
+
 3. Change the bond mode to balance-slb run the following command:
 
 .. code-block:: bash
@@ -37,6 +38,6 @@ Changing bond from Active/backup to balance-slb
 
   ssh root@192.168.5.1 "ovs-appctl bond/show br0-up"
 
-    **Notice** the next rebalance should be less than **30000ms** bond_mode should be **balance-slb**
+**Notice** the next rebalance should be less than **30000ms** bond_mode should be **balance-slb**
 
 6. Repeat steps 1-5 for the remaining CVMs in order to change all ports modes to balance-slb
