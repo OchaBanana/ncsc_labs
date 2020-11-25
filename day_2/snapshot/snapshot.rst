@@ -16,9 +16,9 @@ Nutanix Data Protection
 Purpose: Explore the rich set of integrated data protection and disaster recovery
 Capabilities in the Nutanix solution
 
-  1) Log into Prism
-  2) Click on “+ Protection Domain” button > “Async DR”
-  4) Create a protection domain with a unique name by going through the wizard
+  1. Log into Prism
+  2. Click on “+ Protection Domain” button > “Async DR”
+  4. Create a protection domain with a unique name by going through the wizard
     - a. Name the protection domain ex “PD-Prod”
     - b. Choose VMs to include in the protection domain
         - choose the cloned VM you created in the :ref:`windows_vm`
@@ -34,7 +34,7 @@ Capabilities in the Nutanix solution
     You may modify the VM so that you can snapshot different version of your VM
     Under “**Local Snapshots**” for this Protection Domain you should see a few listed
 
-  5) Restore VM from Replication:
+  5. Restore VM from Replication:
     - a. Select the Protection Domain containing the VM snapshot
     - b. Choose the Local Snapshot under “Local Snapshots” with the timestamp and click restore
     - c. Choose all VMs or just certain VMs you wish to restore
