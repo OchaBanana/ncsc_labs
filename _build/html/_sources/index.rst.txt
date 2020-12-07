@@ -6,13 +6,13 @@
   :name: _day_1
   :hidden:
 
-  day_1/connect_ipmi/connect_ipmi
-  day_1/using_crashcart/using_crashcart
-  day_1/foundation_cvm/foundation_cvm
-  day_1/1_click_upgrade/1_click_upgrade
-  day_1/install_foudation/install_foudation
-  day_1/install_pc/install_pc
-  day_1/creating_built_guide/creating_built_guide
+  day_1/1a_connect_ipmi/1a_connect_ipmi
+  day_1/1b_using_crashcart/1b_using_crashcart
+  day_1/1c_foundation_cvm/1c_foundation_cvm
+  day_1/1d_1_click_upgrade/1d_1_click_upgrade
+  day_1/1e_install_foudation/1e_install_foudation
+  day_1/1f_install_pc/1f_install_pc
+  day_1/1g_creating_built_guide/1g_creating_built_guide
 
 
 .. toctree::
@@ -21,11 +21,11 @@
   :name: _day_2
   :hidden:
 
-  day_2/bond_modes/bond_modes
-  day_2/assigning_vlan/assigning_vlan
-  day_2/snapshot/snapshot
-  day_2/ssr/ssr
-  day_2/replication/replication
+  day_2/2a_bond_modes/2a_bond_modes
+  day_2/2b_assigning_vlan/2b_assigning_vlan
+  day_2/2c_snapshot/2c_snapshot
+  day_2/2d_ssr/2d_ssr
+  day_2/2e_replication/2e_replication
 
 .. toctree::
   :maxdepth: 2
@@ -33,8 +33,8 @@
   :name: _day_3
   :hidden:
 
-  day_3/manually_importing/manually_importing
-  day_3/using_move/using_move
+  day_3/3a_manually_importing/3a_manually_importing
+  day_3/3b_using_move/3b_using_move
 
 .. toctree::
   :maxdepth: 2
@@ -42,10 +42,10 @@
   :name: _day_3
   :hidden:
 
-  day_3/diagnostics/diagnostics
-  day_3/xray/xray
-  day_3/collector/collector
-  day_3/ncc/ncc
+  day_3/4a_diagnostics/4a_diagnostics
+  day_3/4b_xray/4b_xray
+  day_3/4c_collector/4c_collector
+  day_3/4d_ncc/4d_ncc
 
 .. toctree::
   :maxdepth: 2
