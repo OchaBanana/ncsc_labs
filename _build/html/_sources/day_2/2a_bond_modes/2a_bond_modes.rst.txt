@@ -8,7 +8,7 @@ In this lab we want to show you what it takes to set your bonds from the default
 
 .. figure:: images/1_change_bond.png
 
-Changing bond from Active/backup to balance-slb
+Changing bond mode from Active/backup to balance-slb
 -----------------------------------------------
 
 #. ssh into one of your CVMs

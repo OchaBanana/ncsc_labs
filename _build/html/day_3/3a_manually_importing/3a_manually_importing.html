@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</title>
+    <title>Lab 3a: Manually import VMs</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 3b: Using Move VMs to migrate from ESXi to AHV" href="../3b_using_move/3b_using_move.html" />
-    <link rel="prev" title="Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site" href="../../day_2/2e_replication/2e_replication.html" />
+    <link rel="next" title="Lab 3b: Nutanix Move" href="../3b_using_move/3b_using_move.html" />
+    <link rel="prev" title="Lab 2e: Replication" href="../../day_2/2e_replication/2e_replication.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -64,10 +64,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1a_connect_ipmi/1a_connect_ipmi.html#connencting-to-ipmi">Connencting to IPMI:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html">Lab 1b: Using the crashcart network_configuration command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html">Lab 1b: crashcart network_configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html#using-the-crashcart-network-configuration-command">Using the crashcart network_configuration command</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade of AOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1e_install_foudation/1e_install_foudation.html">Lab 1e: Install Foundation VM on your Laptop (Optional reference Lab)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html#click-upgrade-of-aos">1-Click upgrade of AOS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1e_install_foudation/1e_install_foudation.html">Lab 1e: Install Foundation VM (Optional Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1e_install_foudation/1e_install_foudation.html#install-foundation-vm-on-your-laptop">Install Foundation VM on your Laptop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1e_install_foudation/1e_install_foudation.html#downloading-the-needed-foundation-aos">Downloading the needed Foundation &amp; AOS:</a></li>
 </ul>
 </li>
@@ -93,17 +100,22 @@
 <p class="caption"><span class="caption-text">Day 2 Data Protection</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../day_2/2a_bond_modes/2a_bond_modes.html">Lab 2a: Networking: Bond Modes in AHV</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../day_2/2a_bond_modes/2a_bond_modes.html#changing-bond-from-active-backup-to-balance-slb">Changing bond from Active/backup to balance-slb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/2a_bond_modes/2a_bond_modes.html#changing-bond-mode-from-active-backup-to-balance-slb">Changing bond mode from Active/backup to balance-slb</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_2/2b_assigning_vlan/2b_assigning_vlan.html">Lab 2b: Networking: Assigning VLANs for Host &amp; CVM (Optional reference Lab)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_2/2c_snapshot/2c_snapshot.html">Lab 2c: Snapshot Local and Recover</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/2b_assigning_vlan/2b_assigning_vlan.html">Lab 2b: Networking: Assigning VLANs (Optional Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/2b_assigning_vlan/2b_assigning_vlan.html#assigning-vlans-for-host-cvm">Assigning VLANs for Host &amp; CVM</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/2c_snapshot/2c_snapshot.html">Lab 2c: Snapshot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/2c_snapshot/2c_snapshot.html#snapshot-local-and-recover">Snapshot Local and Recover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_2/2c_snapshot/2c_snapshot.html#lab-setup">Lab Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_2/2c_snapshot/2c_snapshot.html#nutanix-data-protection">Nutanix Data Protection</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_2/2d_ssr/2d_ssr.html">Lab 2d: Self Service Restore SSR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html">Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html">Lab 2e: Replication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html#replication-to-remote-site-recover-snapshot-remotely-migrate-and-activate-snapshot-to-remote-site">Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html#create-a-remote-site">Create a Remote Site</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html#modify-your-data-protection-group">Modify your Data Protection Group</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html#take-a-few-snapshots">Take a few snapshots</a></li>
@@ -113,16 +125,20 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Day 3</span></p>
+<p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#converting">Converting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Using Move VMs to migrate from ESXi to AHV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Nutanix Move</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3b_using_move/3b_using_move.html#using-move-vms-to-migrate-from-esxi-to-ahv">Using Move VMs to migrate from ESXi to AHV</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Day 3</span></p>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3 Fit Checks Using Fit Check Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html">Lab 4a: Diagnostics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html#run-diagnostics">Run Diagnostics</a></li>
@@ -147,6 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tools_vms/windows_vm.html#lab-test-vm-prep">LAB Test VM Prep:</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
 </ul>
 </ul>
 </li>
@@ -178,31 +195,32 @@
         <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Lab 1 : Foundation Lab Remote installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1a_connect_ipmi/1a_connect_ipmi.html">Lab 1a: Connect to and using IPMI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html">Lab 1b: Using the crashcart network_configuration command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html">Lab 1b: crashcart network_configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade of AOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1e_install_foudation/1e_install_foudation.html">Lab 1e: Install Foundation VM on your Laptop (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1e_install_foudation/1e_install_foudation.html">Lab 1e: Install Foundation VM (Optional Lab)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1f_install_pc/1f_install_pc.html">Lab 1f: Install Prism Central</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html">Lab 1g: Creating an As Built Guide</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 2 Data Protection</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../day_2/2a_bond_modes/2a_bond_modes.html">Lab 2a: Networking: Bond Modes in AHV</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_2/2b_assigning_vlan/2b_assigning_vlan.html">Lab 2b: Networking: Assigning VLANs for Host &amp; CVM (Optional reference Lab)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_2/2c_snapshot/2c_snapshot.html">Lab 2c: Snapshot Local and Recover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/2b_assigning_vlan/2b_assigning_vlan.html">Lab 2b: Networking: Assigning VLANs (Optional Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/2c_snapshot/2c_snapshot.html">Lab 2c: Snapshot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_2/2d_ssr/2d_ssr.html">Lab 2d: Self Service Restore SSR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html">Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/2e_replication/2e_replication.html">Lab 2e: Replication</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Day 3</span></p>
+<p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#converting">Converting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Using Move VMs to migrate from ESXi to AHV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Nutanix Move</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Day 3</span></p>
+<p class="caption"><span class="caption-text">Day 3 Fit Checks Using Fit Check Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html">Lab 4a: Diagnostics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">Lab 4b: X-Ray</a></li>
@@ -212,15 +230,19 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
 </ul>
 
         </div>
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="lab-3a-manually-importing-esxi-vms-to-ahv-optional-reference-lab">
-<span id="a-manually-importing"></span><h1>Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)<a class="headerlink" href="#lab-3a-manually-importing-esxi-vms-to-ahv-optional-reference-lab" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-3a-manually-import-vms">
+<span id="a-manually-importing"></span><h1>Lab 3a: Manually import VMs<a class="headerlink" href="#lab-3a-manually-import-vms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="manually-importing-esxi-vms-to-ahv">
+<h2>Manually importing ESXi VMs to AHV<a class="headerlink" href="#manually-importing-esxi-vms-to-ahv" title="Permalink to this headline">¶</a></h2>
 <p>This lab is important as you may need to import a Virtual Disk manually. The steps are generally the same to import vDisks into Nutanix AHV. I suggest this as optional because tools like Move will be used in most cases.</p>
+</div>
 <div class="section" id="preparing">
 <h2>Preparing<a class="headerlink" href="#preparing" title="Permalink to this headline">¶</a></h2>
 <p>A Prepare the VM on the ESXi host was installed with Nutanix VirtIO drivers.</p>

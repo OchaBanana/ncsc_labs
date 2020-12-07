@@ -1,8 +1,11 @@
 .. _1e_install_foudation:
 
 
-Lab 1e: Install Foundation VM on your Laptop (Optional reference Lab)
-*********************************************************************
+Lab 1e: Install Foundation VM (Optional Lab)
+********************************************
+
+Install Foundation VM on your Laptop 
+------------------------------------
 
 This is important lab to understand Baremetal unfortunately we run through these steps with our Remote Labs due to network accessibility. Use this lab as a reference lab. When you would need to baremetal or image a single node you will have to use Foundation VM or Portable Foundation.
 

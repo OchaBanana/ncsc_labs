@@ -1,8 +1,11 @@
 .. _2e_replication:
 
 
-Lab 2e: Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
-*************************************************************************************************************
+Lab 2e: Replication 
+*******************
+
+Replication to remote site & recover snapshot remotely, Migrate and Activate. Snapshot to remote site
+-----------------------------------------------------------------------------------------------------
 
 Create a Remote Site
 --------------------

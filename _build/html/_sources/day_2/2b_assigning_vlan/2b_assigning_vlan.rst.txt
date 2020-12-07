@@ -1,8 +1,11 @@
 .. _2b_assigning_vlan:
 
 
-Lab 2b: Networking: Assigning VLANs for Host & CVM (Optional reference Lab)
-***************************************************************************
+Lab 2b: Networking: Assigning VLANs (Optional Lab)
+**************************************************
+
+Assigning VLANs for Host & CVM
+------------------------------
 
 This lab is important as you will need to change the VLANs when systems are in Trunked production networks this is the case with most production environments.
 

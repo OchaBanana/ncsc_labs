@@ -54,6 +54,7 @@
   :hidden:
 
   tools_vms/windows_vm
+  download_file
  
 .. _getting_started:
 

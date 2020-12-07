@@ -1,8 +1,11 @@
 .. _1d_1_click_upgrade:
 
 
-Lab 1d: 1-Click upgrade of AOS
-******************************
+Lab 1d: 1-Click upgrade
+***********************
+
+1-Click upgrade of AOS
+----------------------
 
 .. note::
 
