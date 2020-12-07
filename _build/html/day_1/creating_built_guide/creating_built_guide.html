@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1g: Creating an As Built Guide</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 2a: Networking: Bond Modes in AHV" href="../../day_2/bond_modes/bond_modes.html" />
+    <link rel="prev" title="Lab 1f: Install Prism Central" href="../install_pc/install_pc.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Lab 1 : Foundation Lab Remote installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../connect_ipmi/connect_ipmi.html">Lab 1a: Connect to and using IPMI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../connect_ipmi/connect_ipmi.html#connencting-to-ipmi">Connencting to IPMI:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using_crashcart/using_crashcart.html">Lab 1b: Using the crashcart network_configuration command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundation_cvm/foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_click_upgrade/1_click_upgrade.html">Lab 1d: 1-Click upgrade of AOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_foudation/install_foudation.html">Lab 1e: Install Foundation VM on your Laptop (Optional reference Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install_foudation/install_foudation.html#downloading-the-needed-foundation-aos">Downloading the needed Foundation &amp; AOS:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_pc/install_pc.html">Lab 1f: Install Prism Central</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install_pc/install_pc.html#preparation-for-this-lab">Preparation for this Lab:</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 1g: Creating an As Built Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vcenter-info-usage">vCenter Info Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-prism-central">Using Prism Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#known-issues">Known Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mixed-clusters">Mixed Clusters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#argument-help">Argument help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">Generate the executables manually using the spec file on all operating systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Day 2 Data Protection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/bond_modes/bond_modes.html">Lab 2a: Networking: Bond Modes in AHV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/bond_modes/bond_modes.html#changing-bond-from-active-backup-to-balance-slb">Changing bond from Active/backup to balance-slb</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/assigning_vlan/assigning_vlan.html">Lab 2b: Networking: Assigning VLANs for Host &amp; CVM (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/snapshot/snapshot.html">Lab 2c: Snapshot Local and Recover</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/snapshot/snapshot.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/snapshot/snapshot.html#nutanix-data-protection">Nutanix Data Protection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/ssr/ssr.html">Lab 2d: Self Service Restore SSR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/replication/replication.html">Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#create-a-remote-site">Create a Remote Site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#modify-your-data-protection-group">Modify your Data Protection Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#take-a-few-snapshots">Take a few snapshots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#restoring-from-remote-snapshots">Restoring from Remote snapshots:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#snapshot-to-remote-site-use-migrate-activate">Snapshot to Remote Site &amp; use Migrate/Activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#snapshot-to-remote-site">Snapshot to remote site</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/manually_importing/manually_importing.html">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/manually_importing/manually_importing.html#a">A</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/using_move/using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/using_move/using_move.html#b">B</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/diagnostics/diagnostics.html">a: diagnostics.py</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/diagnostics/diagnostics.html#a">A</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/xray/xray.html">b: X-Ray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/xray/xray.html#b">B</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/collector/collector.html">c: Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/collector/collector.html#c">C</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/ncc/ncc.html">d: Nutanix Cluster Check (NCC)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/ncc/ncc.html#d">D</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools_vms/windows_vm.html#lab-test-vm-prep">LAB Test VM Prep:</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Lab 1 : Foundation Lab Remote installation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../connect_ipmi/connect_ipmi.html">Lab 1a: Connect to and using IPMI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_crashcart/using_crashcart.html">Lab 1b: Using the crashcart network_configuration command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundation_cvm/foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_click_upgrade/1_click_upgrade.html">Lab 1d: 1-Click upgrade of AOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_foudation/install_foudation.html">Lab 1e: Install Foundation VM on your Laptop (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_pc/install_pc.html">Lab 1f: Install Prism Central</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 1g: Creating an As Built Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vcenter-info-usage">vCenter Info Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-prism-central">Using Prism Central</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#known-issues">Known Issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mixed-clusters">Mixed Clusters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#argument-help">Argument help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">Generate the executables manually using the spec file on all operating systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Day 2 Data Protection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/bond_modes/bond_modes.html">Lab 2a: Networking: Bond Modes in AHV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/assigning_vlan/assigning_vlan.html">Lab 2b: Networking: Assigning VLANs for Host &amp; CVM (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/snapshot/snapshot.html">Lab 2c: Snapshot Local and Recover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/ssr/ssr.html">Lab 2d: Self Service Restore SSR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/replication/replication.html">Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/manually_importing/manually_importing.html">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/using_move/using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/diagnostics/diagnostics.html">a: diagnostics.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/xray/xray.html">b: X-Ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/collector/collector.html">c: Collector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/ncc/ncc.html">d: Nutanix Cluster Check (NCC)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="lab-1g-creating-an-as-built-guide">
+<span id="creating-built-guide"></span><h1>Lab 1g: Creating an As Built Guide<a class="headerlink" href="#lab-1g-creating-an-as-built-guide" title="Permalink to this headline">¶</a></h1>
+<p>This is important lab after Nutanix cluster installation &amp; configurations are completed one of most important deliverables is the “As Built Guide” documentation. Foundation.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Copy and Extract the “<strong>As_Built_Documenter</strong>” from the Cluster Deployment Service Kit &amp; Choose the appropriate script for your OS:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://www.dropbox.com/s/q121g0o6y7ryutl/Nutanix_Cluster_as_Built_Windows_v4.8.1.zip?dl=1">Windows: Nutanix Cluster as Built</a></p></li>
+<li><p><a class="reference external" href="https://www.dropbox.com/s/jnpam9bsao3wzo4/Nutanix_Cluster_as_Built_Mac_v4.8.1.zip?dl=1">Mac: Nutanix Cluster as Built</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>After the files have been unzipped:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If running on MAC, use ./generate_document (needs path to execute)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The MAC executable has been built on MAC OS version 10.13.6, so you can only run this executable on same or later versions of MAC OS.</p>
+</div>
+<dl class="simple">
+<dt>:: Single cluster:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">IP</span> <span class="pre">or</span> <span class="pre">FQDN&gt;</span></code></p>
+</dd>
+<dt>:: Multi cluster:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;,&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">2&gt;&quot;</span></code></p>
+</dd>
+<dt>:: Multi cluster with multiple login credentials:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;,&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">2&gt;&quot;</span> <span class="pre">-m</span></code></p>
+</dd>
+</dl>
+<p>To input list of host IPs from file, use “-f” argument</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input file is a YAML file which has all the IPs or FQDN listed under “nutanix_clusters” section</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-f</span> <span class="pre">&lt;File</span> <span class="pre">containing</span> <span class="pre">Nutanix</span> <span class="pre">Cluster</span> <span class="pre">IP</span> <span class="pre">or</span> <span class="pre">FQDN&gt;</span></code></p>
+<p>To generate output in excel workbook format, use “-e” argument</p>
+<dl class="simple">
+<dt>:: Single cluster:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">IP</span> <span class="pre">or</span> <span class="pre">FQDN&gt;</span> <span class="pre">-e</span></code></p>
+</dd>
+<dt>:: Multi cluster:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;,&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">2&gt;&quot;</span> <span class="pre">-e</span></code></p>
+</dd>
+<dt>:: Multi cluster with multiple login credentials:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;,&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">2&gt;&quot;</span> <span class="pre">-m</span> <span class="pre">-e</span></code></p>
+</dd>
+</dl>
+<p>To generate output in both (word document as well as excel workbook) format, use “-b” argument</p>
+<dl class="simple">
+<dt>:: Single cluster:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">IP</span> <span class="pre">or</span> <span class="pre">FQDN&gt;</span> <span class="pre">-b</span></code></p>
+</dd>
+<dt>:: Multi cluster:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;,&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">2&gt;&quot;</span> <span class="pre">-b</span></code></p>
+</dd>
+<dt>:: Multi cluster with multiple login credentials:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;,&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">2&gt;&quot;</span> <span class="pre">-m</span> <span class="pre">-b</span></code></p>
+</dd>
+</dl>
+<p>For multi cluster, enter multiple Nutanix Cluster FQDNs or IPs seperated by commas surrounded by quotes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When running for multiple clusters, the IPs/FQDNs MUST be a comma delimited string enclosed by quotes.</p>
+</div>
+<p>To run with clusters that use AD credentials pass the AD login with domain.</p>
+<p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">IP</span> <span class="pre">or</span> <span class="pre">FQDN&gt;</span></code></p>
+<p>When you run the executable, you will be prompted for the Nutanix cluster login and password.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If running for multiple clusters the same user name and password can be used for all clusters that are passed into the automation. If there is a need to use separate user names and/or passwords for each cluster, pass the -m flag and you will beprompted for the credentials per each cluster.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If running on older clusters that do expose all of the cluster components via the REST API, the script will continue toexecute and will display a message that the affected table will need to be updated manually.</p>
+</div>
+<p>A Word document will be the output of the execution. The document will be named with the following convention:</p>
+<p>&lt;customer name&gt;-&lt;Nutanix cluster name&gt;-Nutanix_Cluster_as_Built-&lt;date&gt;-&lt;time&gt;.docx</p>
+<p>:: Example:
+Acme_Barricades_Inc-acmedevcluster-Nutanix_Cluster_as_Built_2016-11-23_112629.docx</p>
+<p>Once the document has been created, open and update the TOC (Table of Contents) by right clicking on the TOC, selecting ‘Update Field’, then selecting ‘Update Entire Table’ and then click ‘OK’.</p>
+<p>Continue through the document filing in any information that could not be sourced from the Nutanix cluster, inserting the appropriate diagrams, reformatting as needed and removing any red text highlighted in yellow after completing instructed edits.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is also the possibility that the version of AOS that is on the cluster may not support certain Nutanix REST API</p>
+</div>
+<p>versions. In this case the script will create all of the tables with no data. These tables will need to be filled in manually or removed from the document before handing off to the customer.</p>
+<p>When “-e” argument has been passed a excel workbook along with the word document will be the output of the execution. The workbook will be named with the following convention:</p>
+<p>&lt;customer name&gt;-&lt;Nutanix cluster name&gt;-Nutanix_Cluster_as_Built-&lt;date&gt;-&lt;time&gt;.xlsx</p>
+<p>:: Example:
+Acme_Barricades_Inc-acmedevcluster-Nutanix_Cluster_as_Built_2016-03-03_212629.xlsx</p>
+</div>
+<div class="section" id="vcenter-info-usage">
+<h2>vCenter Info Usage<a class="headerlink" href="#vcenter-info-usage" title="Permalink to this headline">¶</a></h2>
+<p>Your /etc/hosts file should have the hostname and ip of vcenter server (if hostname is entered as input).
+If you wish not to gather information from vCenter, use the below command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">IP</span> <span class="pre">or</span> <span class="pre">FQDN&gt;</span> <span class="pre">-xv</span></code></p>
+<p>If you are running the tool against multiple ESXi clusters with multiple login credentials:</p>
+<p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;,&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">2&gt;&quot;</span> <span class="pre">-mv</span></code></p>
+<p>To pass/change the default SSL Port number (443) used to login to vCenter, use:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default SSL Port Number used to connect to vCenter is 443.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">&quot;Acme</span> <span class="pre">Barricades,</span> <span class="pre">Inc.&quot;</span> <span class="pre">-n</span> <span class="pre">&quot;&lt;Nutanix</span> <span class="pre">cluster</span> <span class="pre">1&gt;&quot;</span> <span class="pre">-pv</span></code></p>
+</div>
+<div class="section" id="using-prism-central">
+<h2>Using Prism Central<a class="headerlink" href="#using-prism-central" title="Permalink to this headline">¶</a></h2>
+<p>Use the following command to use PC credentials and generate outputs for all associated clusters.</p>
+<p><code class="docutils literal notranslate"><span class="pre">generate_document.exe</span> <span class="pre">-c</span> <span class="pre">test</span> <span class="pre">-pc</span> <span class="pre">10.1.174.4</span></code></p>
+</div>
+<div class="section" id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mixed-clusters">
+<h3>Mixed Clusters<a class="headerlink" href="#mixed-clusters" title="Permalink to this headline">¶</a></h3>
+<p>Hypervisors</p>
+<p>If the Nutanix cluster contains mixed hypervisors, e.g. AHV and ESXi, only the hypervisor host information for the first hypervisor found in the cluster will be documented. Please update the document manually for any additional hypervisors in the cluster.</p>
+<p>Node Hardware</p>
+<p>If the Nutanix cluster contains mixed hardware nodes, e.g. NX-3065-G5 and NX-8150-G5, only the image for the first node in the cluster will be captured in the document. Please update the document manually with the additional image(s).</p>
+<p>UCS Hardware</p>
+<p>If the Nutanix cluster is installed on UCS hardware, the UCS specific information will need to be added manually from the UCS build template document.</p>
+<p>Protection Domains pre AOS 5.0</p>
+<p>The protection domain information is not reliably available in AOS version pre 5.0.</p>
+<p>Mac OS</p>
+<p>The following error message is displayed when running from a Mac:</p>
+<p>Failed to execute script generate_document</p>
+<p>This is an erroneous message as the script does run successfully and the document(s) are created. This a bug with the tool used to package the executable which only presents on a Mac OS. The issue is noted and will be addressed as soon a fix is provided.</p>
+</div>
+</div>
+<div class="section" id="argument-help">
+<h2>Argument help<a class="headerlink" href="#argument-help" title="Permalink to this headline">¶</a></h2>
+<p> usage: generate_document  &emsp;&emsp;&emsp;  [-h] -c CUSTOMER_NAME
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;(-n NUTANIX_CLUSTER_HOST | -f NUTANIX_CLUSTER_FILE)
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-t DOCUMENT_TEMPLATE] [-l DOCUMENT_LAYOUT]
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-o DOCUMENT_OUTPUT] [-m] [-mv] [-s DATA_SOURCE]
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-d] [-e] [-b] [-xv]
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-pv]
+<p>
+<br>optional arguments:
+<br>&emsp;-h, --help &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;show this help message and exit
+<br>&emsp;-c CUSTOMER_NAME, --customer CUSTOMER_NAME
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Customer name.
+<br>&emsp;-n NUTANIX_CLUSTER_HOSTS, --nutanix_cluster_hosts NUTANIX_CLUSTER_HOSTS
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;API host IP or FQDN.
+<br>&emsp;-pc PRISM_CENTRAL_HOSTS, --prism_central_hosts PRISM_CENTRAL_HOSTS
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Prism Central IP or FQDN
+<br>&emsp;-f NUTANIX_CLUSTER_FILE, --nutanix_cluster_file NUTANIX_CLUSTER_FILE
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;File containing API host IP or FQDN.
+<br>&emsp;-t DOCUMENT_TEMPLATE, --document_template DOCUMENT_TEMPLATE
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Word document template.
+<br>&emsp;-s DATA_SOURCE, --data_source DATA_SOURCE
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;YAML data source file.
+<br>&emsp;-l DOCUMENT_LAYOUT, --document_layout DOCUMENT_LAYOUT
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;YAML document layout file.
+<br>&emsp;-o DOCUMENT_OUTPUT, --document_output DOCUMENT_OUTPUT
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Word document output file.
+<br>&emsp;-wl WORKBOOK_LAYOUT, --workbook_layout WORKBOOK_LAYOUT
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Excel workbook layout file.
+<br>&emsp;-a, --all_outputs Generates Word document,
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Excel workbooks per cluster and Summary Workbook.
+<br>&emsp;-e, --excel_output Generates &emsp;&emsp;Excel workbooks per cluster
+<br>&emsp;-es, --excel_summary Generates
+<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Excel Summary Workbook.
+<br>&emsp;-w, --word_output Generates &emsp;&ensp;&nbsp;Word documents per cluster
+<br>&emsp;-m, --multi_user &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Multiple user accounts are required to access multiple clusters.
+<br>&emsp;-d, --debug &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;Debug the document generaton workflow
+<br>&emsp;-mv, --multi_user_vcenter &emsp;&emsp;&emsp;&nbsp;&nbsp;Multiple user accounts are required to access different vcenters.
+<br>&emsp;-pv, --ssl_port_vcenter &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Non-standard vCenter SSL port
+<br>&emsp;-xv, --no_vcenter &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Exclude vCenter Info
+</p></div>
+<div class="section" id="generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">
+<h2>Generate the executables manually using the spec file on all operating systems<a class="headerlink" href="#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>pyinstaller –onefile cluster-deploy-documenter.spec</p></li>
+<li><p>The executable will be generated inside the /dist directory</p></li>
+</ol>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Open File generated and modify the highlighted areas using provide templates to complete</dt><dd><p><em>Use your company document template if applicable – this would be if you are providing the installation service in behalf of your company</em></p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Email this file to instructor this is part of your Practical Exam requirements</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/day_1/creating_built_guide/creating_built_guide.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

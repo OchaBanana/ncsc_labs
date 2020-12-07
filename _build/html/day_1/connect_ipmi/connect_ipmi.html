@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1a: Connect to and using IPMI</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 1b: Using the crashcart network_configuration command" href="../using_crashcart/using_crashcart.html" />
+    <link rel="prev" title="Getting Started" href="../../index.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Lab 1 : Foundation Lab Remote installation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 1a: Connect to and using IPMI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#connencting-to-ipmi">Connencting to IPMI:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using_crashcart/using_crashcart.html">Lab 1b: Using the crashcart network_configuration command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundation_cvm/foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_click_upgrade/1_click_upgrade.html">Lab 1d: 1-Click upgrade of AOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_foudation/install_foudation.html">Lab 1e: Install Foundation VM on your Laptop (Optional reference Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install_foudation/install_foudation.html#downloading-the-needed-foundation-aos">Downloading the needed Foundation &amp; AOS:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install_pc/install_pc.html">Lab 1f: Install Prism Central</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install_pc/install_pc.html#preparation-for-this-lab">Preparation for this Lab:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_built_guide/creating_built_guide.html">Lab 1g: Creating an As Built Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Day 2 Data Protection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/bond_modes/bond_modes.html">Lab 2a: Networking: Bond Modes in AHV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/bond_modes/bond_modes.html#changing-bond-from-active-backup-to-balance-slb">Changing bond from Active/backup to balance-slb</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/assigning_vlan/assigning_vlan.html">Lab 2b: Networking: Assigning VLANs for Host &amp; CVM (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/snapshot/snapshot.html">Lab 2c: Snapshot Local and Recover</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/snapshot/snapshot.html#lab-setup">Lab Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/snapshot/snapshot.html#nutanix-data-protection">Nutanix Data Protection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/ssr/ssr.html">Lab 2d: Self Service Restore SSR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/replication/replication.html">Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#create-a-remote-site">Create a Remote Site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#modify-your-data-protection-group">Modify your Data Protection Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#take-a-few-snapshots">Take a few snapshots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#restoring-from-remote-snapshots">Restoring from Remote snapshots:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#snapshot-to-remote-site-use-migrate-activate">Snapshot to Remote Site &amp; use Migrate/Activate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_2/replication/replication.html#snapshot-to-remote-site">Snapshot to remote site</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/manually_importing/manually_importing.html">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/manually_importing/manually_importing.html#a">A</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/using_move/using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/using_move/using_move.html#b">B</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/diagnostics/diagnostics.html">a: diagnostics.py</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/diagnostics/diagnostics.html#a">A</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/xray/xray.html">b: X-Ray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/xray/xray.html#b">B</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/collector/collector.html">c: Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/collector/collector.html#c">C</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/ncc/ncc.html">d: Nutanix Cluster Check (NCC)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_3/ncc/ncc.html#d">D</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tools_vms/windows_vm.html#lab-test-vm-prep">LAB Test VM Prep:</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Lab 1 : Foundation Lab Remote installation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 1a: Connect to and using IPMI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#connencting-to-ipmi">Connencting to IPMI:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using_crashcart/using_crashcart.html">Lab 1b: Using the crashcart network_configuration command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../foundation_cvm/foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_click_upgrade/1_click_upgrade.html">Lab 1d: 1-Click upgrade of AOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_foudation/install_foudation.html">Lab 1e: Install Foundation VM on your Laptop (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install_pc/install_pc.html">Lab 1f: Install Prism Central</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../creating_built_guide/creating_built_guide.html">Lab 1g: Creating an As Built Guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Day 2 Data Protection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/bond_modes/bond_modes.html">Lab 2a: Networking: Bond Modes in AHV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/assigning_vlan/assigning_vlan.html">Lab 2b: Networking: Assigning VLANs for Host &amp; CVM (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/snapshot/snapshot.html">Lab 2c: Snapshot Local and Recover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/ssr/ssr.html">Lab 2d: Self Service Restore SSR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_2/replication/replication.html">Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/manually_importing/manually_importing.html">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/using_move/using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Day 3</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/diagnostics/diagnostics.html">a: diagnostics.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/xray/xray.html">b: X-Ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/collector/collector.html">c: Collector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/ncc/ncc.html">d: Nutanix Cluster Check (NCC)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="lab-1a-connect-to-and-using-ipmi">
+<span id="connect-ipmi"></span><h1>Lab 1a: Connect to and using IPMI<a class="headerlink" href="#lab-1a-connect-to-and-using-ipmi" title="Permalink to this headline">¶</a></h1>
+<p>Due to Covid-19 <strong>Remote Installations</strong> are now being done with the majority of our customers. This can be done in a few ways. The remote installation workflow is different but can be simplified by manually setting the node IPs. Because manually setting the node IPs covers a much broader situations we will be focusing on these steps in the Labs. Rack and stack and <strong>setting the IPMI IPs via BIOS or ipmitool command</strong> will have to be done by someone ahead of time in order for you to have access to these systems remotely.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The remote installation steps are also used for node models that do not have 1Gb ports or dark sites.</p>
+</div>
+<div class="section" id="connencting-to-ipmi">
+<h2>Connencting to IPMI:<a class="headerlink" href="#connencting-to-ipmi" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><dl class="simple">
+<dt>Open a web browser to your IPMI IP: http://&lt;IPMI IP&gt; <strong>USE YOUR ASSIGNED NODE(S)</strong></dt><dd><ul class="simple">
+<li><ol class="loweralpha simple">
+<li><p>User: ADMIN Password :ADMIN</p></li>
+</ol>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Click Remote Console</p>
+<blockquote>
+<div><div class="figure align-default">
+<img alt="../../_images/1_remote_console.png" src="../../_images/1_remote_console.png" />
+</div>
+</div></blockquote>
+</li>
+<li><p>Click iKVM/HTML5 to get to the console of the node (AHV).</p></li>
+<li><p>Login with your AHV Host “root” user Lab Assigned Password</p></li>
+<li><p>To login to the local CVM use the internal IP “ssh <a class="reference external" href="mailto:nutanix&#37;&#52;&#48;192&#46;168&#46;5&#46;2">nutanix<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>5<span>&#46;</span>2</a>”</p></li>
+<li><p>Login with your CVM Lab Assigned Password</p></li>
+<li><p><strong>(FROM NODE A ONLY, for team labs only one person should do this step)</strong> Since these labs are provided already installed, we want to put the system into a similar state to when they are out of the factory. To do so run the following commands:</p>
+<blockquote>
+<div><ul>
+<li><p>a: “<em>cluster status</em>” – shows you the status of your cluster. In our lab the cluster is UP</p></li>
+<li><p>b: “<em>cluster stop</em>” – this will disable the cluster</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If VMs are online you must shut them down use the following commands: acli vm_list (gets the list of vms) acli vm.force_off &lt;name of VM&gt; (forcefully shuts down VM)</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>c: “<em>cluster destroy</em>” – removes all CVMs from cluster This is to put our labs in out of factory state.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is destructive to existing production data. You would not want to do this command unless you are prepared to lose your data still on a cluster.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>d: “<em>cluster status</em>” – run again to see “Cluster is currently unconfigured”</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If cluster completes and still showing as still part of a cluster you can manually
+set it on each node individually with the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /homes/nutanix
+touch .node_unconfigure
+genesis restart
+</pre></div>
+</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>e: “<strong>exit</strong>” to exit the CVM and go back to AHV prompt for next lab</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/day_1/connect_ipmi/connect_ipmi.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
