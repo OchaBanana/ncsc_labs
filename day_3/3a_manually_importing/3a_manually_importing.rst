@@ -1,8 +1,11 @@
 .. _3a_manually_importing:
 
 
-Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)
-*******************************************************************
+Lab 3a: Manually import VMs
+***************************
+
+Manually importing ESXi VMs to AHV
+----------------------------------
 
 This lab is important as you may need to import a Virtual Disk manually. The steps are generally the same to import vDisks into Nutanix AHV. I suggest this as optional because tools like Move will be used in most cases.
 

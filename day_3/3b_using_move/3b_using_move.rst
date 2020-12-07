@@ -1,8 +1,11 @@
 .. _3b_using_move:
 
 
-Lab 3b: Using Move VMs to migrate from ESXi to AHV
-**************************************************
+Lab 3b: Nutanix Move
+********************
+
+Using Move VMs to migrate from ESXi to AHV
+------------------------------------------
 
 #. Under VMs Power on “MOVE VM” 
 #. Choose “Launch Console” 

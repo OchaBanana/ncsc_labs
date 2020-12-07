@@ -1,8 +1,11 @@
 .. _2c_snapshot:
 
 
-Lab 2c: Snapshot Local and Recover
-**********************************
+Lab 2c: Snapshot 
+****************
+
+Snapshot Local and Recover
+--------------------------
 
 Lab Setup
 ---------
