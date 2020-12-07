@@ -29,7 +29,7 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Day 3
+  :caption: Day 3 Data Migrations
   :name: _day_3
   :hidden:
 
@@ -38,7 +38,7 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: Day 3
+  :caption: Day 3 Fit Checks Using Fit Check Tools
   :name: _day_3
   :hidden:
 
