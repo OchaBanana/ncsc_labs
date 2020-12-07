@@ -1,10 +1,16 @@
 .. _4a_diagnostics:
 
----------------------------------------------------------
-a: diagnostics.py
----------------------------------------------------------
 
+Lab 4a: Diagnostics
+*******************
 
+Lab 4 is really practicing the use of some Nuanix gathering tools Install and get familiar with what kinds of information can be gathered using these tools for Fit checks. Review Lab 1g using the As Built Guide as this tool is also used for Fit Checks.
 
-A
-++++++++
+Run Diagnostics
+---------------
+
+#. SSH to CVM
+#. Run script from /home/nutanix/diagnostics/diagnostics.py run
+#. View output from /home/nutanix/diagnostics/results
+#. Run script from /home/nutanix/diagnostics/diagnostics.py cleanup
+#. Review the output

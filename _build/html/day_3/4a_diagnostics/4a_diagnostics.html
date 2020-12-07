@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>a: diagnostics.py</title>
+    <title>Lab 4a: Diagnostics</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="b: X-Ray" href="../4b_xray/4b_xray.html" />
-    <link rel="prev" title="b: Using Move VMs to migrate from ESXi to AHV" href="../3b_using_move/3b_using_move.html" />
+    <link rel="next" title="Lab 4b: X-Ray" href="../4b_xray/4b_xray.html" />
+    <link rel="prev" title="Lab 3b: Using Move VMs to migrate from ESXi to AHV" href="../3b_using_move/3b_using_move.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -115,31 +115,29 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html#a">A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html#preparing">Preparing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html#converting">Converting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../3b_using_move/3b_using_move.html#b">B</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Using Move VMs to migrate from ESXi to AHV</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">a: diagnostics.py</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a">A</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 4a: Diagnostics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#run-diagnostics">Run Diagnostics</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">b: X-Ray</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4b_xray/4b_xray.html#b">B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">Lab 4b: X-Ray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4b_xray/4b_xray.html#install-and-run-x-ray">Install and Run X-Ray</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">c: Collector</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4c_collector/4c_collector.html#c">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">Lab 4c: Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4c_collector/4c_collector.html#install-and-run-collector-desktop-application">Install and Run Collector (Desktop Application)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">d: Nutanix Cluster Check (NCC)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4d_ncc/4d_ncc.html#d">D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">Lab 4d: Nutanix Cluster Check (NCC)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4d_ncc/4d_ncc.html#run-ncc">Run NCC</a></li>
 </ul>
 </li>
 </ul>
@@ -197,18 +195,18 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Using Move VMs to migrate from ESXi to AHV</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">a: diagnostics.py</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a">A</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 4a: Diagnostics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#run-diagnostics">Run Diagnostics</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">b: X-Ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">c: Collector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">d: Nutanix Cluster Check (NCC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">Lab 4b: X-Ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">Lab 4c: Collector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">Lab 4d: Nutanix Cluster Check (NCC)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
@@ -219,10 +217,18 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="a-diagnostics-py">
-<span id="a-diagnostics"></span><h1>a: diagnostics.py<a class="headerlink" href="#a-diagnostics-py" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="a">
-<h2>A<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="lab-4a-diagnostics">
+<span id="a-diagnostics"></span><h1>Lab 4a: Diagnostics<a class="headerlink" href="#lab-4a-diagnostics" title="Permalink to this headline">¶</a></h1>
+<p>Lab 4 is really practicing the use of some Nuanix gathering tools Install and get familiar with what kinds of information can be gathered using these tools for Fit checks. Review Lab 1g using the As Built Guide as this tool is also used for Fit Checks.</p>
+<div class="section" id="run-diagnostics">
+<h2>Run Diagnostics<a class="headerlink" href="#run-diagnostics" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>SSH to CVM</p></li>
+<li><p>Run script from /home/nutanix/diagnostics/diagnostics.py run</p></li>
+<li><p>View output from /home/nutanix/diagnostics/results</p></li>
+<li><p>Run script from /home/nutanix/diagnostics/diagnostics.py cleanup</p></li>
+<li><p>Review the output</p></li>
+</ol>
 </div>
 </div>
 

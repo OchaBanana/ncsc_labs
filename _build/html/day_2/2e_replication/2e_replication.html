@@ -228,8 +228,7 @@
 <span id="e-replication"></span><h1>Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site<a class="headerlink" href="#lab-2e-replication-to-remote-site-recover-snapshot-remotely-migrate-and-activate-snapshot-to-remote-site" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="create-a-remote-site">
 <h2>Create a Remote Site<a class="headerlink" href="#create-a-remote-site" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p>From Data Protection Click “<strong>Remote Site</strong>” and select “<strong>Physical Cluster</strong>”</p></li>
 <li><p>Give Remote Site a name “&lt;<em>Your Initials</em>-REMOTE&gt;”</p></li>
 <li><p>Choose Capabilities “<strong>Disaster Recovery</strong>” this will allow Remote Recovery</p></li>
@@ -241,48 +240,40 @@
 <p class="admonition-title">Note</p>
 <p>You must make a remote site from your partners cluster to your cluster and they should go from <strong>vStore B to vStore A</strong>.</p>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="modify-your-data-protection-group">
 <h2>Modify your Data Protection Group<a class="headerlink" href="#modify-your-data-protection-group" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p>Select your Protection Domain and click update</p></li>
 <li><p>Modify your Schedule and you will now see a remote site.</p></li>
 <li><p>Keep last 30 on Remote site</p></li>
 <li><p>Then Click “<strong>Create Schedule</strong>”</p></li>
 </ol>
-</div></blockquote>
 </div>
 <div class="section" id="take-a-few-snapshots">
 <h2>Take a few snapshots<a class="headerlink" href="#take-a-few-snapshots" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic simple">
 <li><p>Select your Protection Domain</p></li>
 <li><p>Click “<strong>Take Snapshot</strong>”</p></li>
 <li><p>Make sure the Remote site is selected and hit Save</p></li>
 <li><p>Repeat step 2 &amp; 3 a few times (at least 5 times)</p></li>
 <li><p>The first replication should take the longest, click under “<strong>Replications</strong>” to watch the status.</p></li>
 </ol>
-</div></blockquote>
 </div>
 <div class="section" id="restoring-from-remote-snapshots">
 <h2>Restoring from Remote snapshots:<a class="headerlink" href="#restoring-from-remote-snapshots" title="Permalink to this headline">¶</a></h2>
 <p>When Replications are done a full copy and its Deltas were sent to remote site.</p>
-<blockquote>
-<div><dl class="simple">
+<dl class="simple">
 <dt>Recover remote snapshot from local site A</dt><dd><ol class="arabic simple">
 <li><p>Select “<strong>Remote Snapshots</strong>”</p></li>
 <li><p>Select a remote snapshot to bring back as a local snapshot for local recovery</p></li>
 </ol>
 </dd>
 </dl>
-</div></blockquote>
 </div>
 <div class="section" id="snapshot-to-remote-site-use-migrate-activate">
 <h2>Snapshot to Remote Site &amp; use Migrate/Activate<a class="headerlink" href="#snapshot-to-remote-site-use-migrate-activate" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="simple">
+<dl class="simple">
 <dt>Scenario #1 is you want to move the VM from site A to Site B.</dt><dd><ol class="arabic simple">
 <li><p>From Site A Select your Protection Domain</p></li>
 <li><p>Choose “<strong>Migrate</strong>” and notice all the VMs in that Protection Domain should be removed from Site A and powered on in Site B (Fail-Over)</p></li>
@@ -297,19 +288,16 @@
 </ol>
 </dd>
 </dl>
-</div></blockquote>
 </div>
 <div class="section" id="snapshot-to-remote-site">
 <h2>Snapshot to remote site<a class="headerlink" href="#snapshot-to-remote-site" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="simple">
+<dl class="simple">
 <dt>Recover a snapshot at Remote Site B</dt><dd><ol class="arabic simple">
 <li><p>From the site B look at “<strong>local snapshots</strong>”</p></li>
 <li><p>Recover one of your snapshots in Site B</p></li>
 </ol>
 </dd>
 </dl>
-</div></blockquote>
 </div>
 </div>
 

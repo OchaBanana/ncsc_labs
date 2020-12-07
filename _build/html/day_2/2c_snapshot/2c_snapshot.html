@@ -230,60 +230,58 @@
 <h2>Nutanix Data Protection<a class="headerlink" href="#nutanix-data-protection" title="Permalink to this headline">¶</a></h2>
 <p>Purpose: Explore the rich set of integrated data protection and disaster recovery
 Capabilities in the Nutanix solution</p>
-<blockquote>
-<div><ol class="arabic simple">
+<ol class="arabic">
 <li><p>Log into Prism</p></li>
-</ol>
-<p>2. Click on “+ Protection Domain” button &gt; “Async DR”
-4. Create a protection domain with a unique name by going through the wizard</p>
-<blockquote>
-<div><ul>
+<li><p>Click on “+ Protection Domain” button &gt; “Async DR”</p></li>
+<li><dl class="simple">
+<dt>Create a protection domain with a unique name by going through the wizard</dt><dd><ul class="simple">
 <li><ol class="loweralpha simple">
 <li><p>Name the protection domain ex “PD-Prod”</p></li>
 </ol>
 </li>
 <li><ol class="loweralpha simple" start="2">
-<li><p>Choose VMs to include in the protection domain</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>Choose VMs to include in the protection domain</dt><dd><ul>
 <li><p>choose the cloned VM you created in the <a class="reference internal" href="../../tools_vms/windows_vm.html#windows-vm"><span class="std std-ref">Lab Test VM</span></a></p></li>
 <li><p>choose “Protect Selected Entities” click Next</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+</ol>
 </li>
 <li><ol class="loweralpha simple" start="3">
-<li><p>Click “New Schedule” Setup a schedule for the protection domain</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>Click “New Schedule” Setup a schedule for the protection domain</dt><dd><ul>
 <li><p>choose “<strong>Repeat every “1” day</strong>”</p></li>
 <li><p>Create Schedule</p></li>
 <li><p><strong>Close</strong></p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+</ol>
 </li>
 <li><ol class="loweralpha simple" start="4">
-<li><p>Simulate a few days of snapshots by selecting the <strong>Async DR</strong> you created in table view</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>Simulate a few days of snapshots by selecting the <strong>Async DR</strong> you created in table view</dt><dd><ul>
 <li><p>Select “<strong>Take Snapshot</strong>” and hit save and repeat a few times.</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+</ol>
 </li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You may modify the VM so that you can snapshot different version of your VM
-Under “<strong>Local Snapshots</strong>” for this Protection Domain you should see a few listed</p>
+<p>You may modify the VM so that you can snapshot different version of your VM Under “<strong>Local Snapshots</strong>” for this Protection Domain you should see a few listed</p>
 </div>
-<ol class="arabic simple" start="5">
-<li><p>Restore VM from Replication:</p></li>
-</ol>
-<blockquote>
-<div><ul>
+</li>
+<li><dl class="simple">
+<dt>Restore VM from Replication:</dt><dd><ul class="simple">
 <li><ol class="loweralpha simple">
 <li><p>Select the Protection Domain containing the VM snapshot</p></li>
 </ol>
@@ -297,28 +295,32 @@ Under “<strong>Local Snapshots</strong>” for this Protection Domain you shou
 </ol>
 </li>
 <li><ol class="loweralpha simple" start="4">
-<li><p>Create new entities:</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>Create new entities:</dt><dd><ul>
 <li><p>Choose to create new entity to restore to a new VM. (Prefix: Nutanix-Clone-)</p></li>
 <li><p>Look at VMs to see there are new VMs restore from your snapshots</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+</ol>
 </li>
 <li><ol class="loweralpha simple" start="5">
-<li><p>Overwrite Existing Entities (remember to use a clone to have a copy of your VM):</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>Overwrite Existing Entities (remember to use a clone to have a copy of your VM):</dt><dd><ul>
 <li><p>Choose to overwrite your VM while online</p></li>
 <li><p>The VM should boot into the VM at the point in time of the snapshot.</p></li>
 </ul>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+</ol>
 </li>
 </ul>
-</div></blockquote>
-</div></blockquote>
+</dd>
+</dl>
+</li>
+</ol>
 </div>
 </div>
 

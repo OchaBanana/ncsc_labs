@@ -7,6 +7,10 @@ Lab Test VM
 LAB Test VM Prep:
 -----------------
 
+#. Upload Windows2012R.qcow2 image from under link 
+	     - **BLR** \nfs://10.136.239.13/workshop_staging/Windows2012R2.qcow2
+	     - **PHX** \nfs://10.42.194.11/workshop_staging/Windows2012R2.qcow2
+	     - **RTP** \nfs://10.55.251.38/workshop_staging/Windows2012R2.qcow2
 #. Locate Windows 2012 VM and add a CDROM Click “Update” Click “+Add New Disk” under Disks
 #. Choose “CDROM” and
 #. Power on the Windows2012 VM

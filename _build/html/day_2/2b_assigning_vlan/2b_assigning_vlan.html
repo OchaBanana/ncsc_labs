@@ -219,33 +219,36 @@
   <div class="section" id="lab-2b-networking-assigning-vlans-for-host-cvm-optional-reference-lab">
 <span id="b-assigning-vlan"></span><h1>Lab 2b: Networking: Assigning VLANs for Host &amp; CVM (Optional reference Lab)<a class="headerlink" href="#lab-2b-networking-assigning-vlans-for-host-cvm-optional-reference-lab" title="Permalink to this headline">¶</a></h1>
 <p>This lab is important as you will need to change the VLANs when systems are in Trunked production networks this is the case with most production environments.</p>
-<blockquote>
-<div><div class="admonition note">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It’s recommend connecting by remote console in IPMI because you may lose connection if you are SSH into the node</p>
 </div>
-</div></blockquote>
-<blockquote>
-<div></div></blockquote>
-<ol class="arabic simple">
-<li><p>Confirm VLAN tagging on port br0.</p></li>
-</ol>
-<blockquote>
-<div></div></blockquote>
-<ol class="arabic simple">
-<li><p>From host console Log on to the <strong>Controller VM</strong>.</p></li>
-</ol>
-<blockquote>
-<div></div></blockquote>
-<ol class="arabic simple">
-<li><p>Assign the public interface of the <strong>Controller VM</strong> to a VLAN.</p></li>
-</ol>
-<blockquote>
-<div></div></blockquote>
-<p>asdfs
-.. node:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hosts</span> <span class="n">VLAN</span> <span class="ow">and</span> <span class="n">CVM</span> <span class="n">VLAN</span> <span class="n">must</span> <span class="n">be</span> <span class="n">same</span><span class="o">.</span>
+<ol class="arabic">
+<li><p>ssh into each of your <strong>AHV</strong> Hosts</p></li>
+<li><p>Assign port br0 to the VLAN that you want the host be on.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ovs-vsctl <span class="nb">set</span> port br0 <span class="nv">tag</span><span class="o">=</span>&lt;host_vlan_tag&gt;
 </pre></div>
+</div>
+</li>
+<li><p>Confirm VLAN tagging on port br0.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ovs-vsctl list port br0
+</pre></div>
+</div>
+</li>
+<li><p>From host console Log on to the <strong>Controller VM</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh nutanix@192.168.5.254
+</pre></div>
+</div>
+</li>
+<li><p>Assign the public interface of the <strong>Controller VM</strong> to a VLAN.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>change_cvm_vlan &lt;vlan_id&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hosts VLAN and CVM VLAN must be same.</p>
 </div>
 </div>
 

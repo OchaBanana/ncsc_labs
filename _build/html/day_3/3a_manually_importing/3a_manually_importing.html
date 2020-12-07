@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>a: Manually importing ESXi VMs to AHV (Optional reference Lab)</title>
+    <title>Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="b: Using Move VMs to migrate from ESXi to AHV" href="../3b_using_move/3b_using_move.html" />
+    <link rel="next" title="Lab 3b: Using Move VMs to migrate from ESXi to AHV" href="../3b_using_move/3b_using_move.html" />
     <link rel="prev" title="Lab 2e: Replication to remote site &amp; recover snapshot remotely, Migrate and Activate. Snapshot to remote site" href="../../day_2/2e_replication/2e_replication.html" />
 
 <meta charset='utf-8'>
@@ -115,31 +115,29 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a">A</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparing">Preparing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#converting">Converting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../3b_using_move/3b_using_move.html#b">B</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Using Move VMs to migrate from ESXi to AHV</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html">a: diagnostics.py</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html#a">A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html">Lab 4a: Diagnostics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html#run-diagnostics">Run Diagnostics</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">b: X-Ray</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4b_xray/4b_xray.html#b">B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">Lab 4b: X-Ray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4b_xray/4b_xray.html#install-and-run-x-ray">Install and Run X-Ray</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">c: Collector</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4c_collector/4c_collector.html#c">C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">Lab 4c: Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4c_collector/4c_collector.html#install-and-run-collector-desktop-application">Install and Run Collector (Desktop Application)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">d: Nutanix Cluster Check (NCC)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../4d_ncc/4d_ncc.html#d">D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">Lab 4d: Nutanix Cluster Check (NCC)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4d_ncc/4d_ncc.html#run-ncc">Run NCC</a></li>
 </ul>
 </li>
 </ul>
@@ -197,18 +195,19 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#a">A</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preparing">Preparing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#converting">Converting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">b: Using Move VMs to migrate from ESXi to AHV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3b_using_move/3b_using_move.html">Lab 3b: Using Move VMs to migrate from ESXi to AHV</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html">a: diagnostics.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">b: X-Ray</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">c: Collector</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">d: Nutanix Cluster Check (NCC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4a_diagnostics/4a_diagnostics.html">Lab 4a: Diagnostics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4b_xray/4b_xray.html">Lab 4b: X-Ray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4c_collector/4c_collector.html">Lab 4c: Collector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4d_ncc/4d_ncc.html">Lab 4d: Nutanix Cluster Check (NCC)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
@@ -219,10 +218,30 @@
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="a-manually-importing-esxi-vms-to-ahv-optional-reference-lab">
-<span id="a-manually-importing"></span><h1>a: Manually importing ESXi VMs to AHV (Optional reference Lab)<a class="headerlink" href="#a-manually-importing-esxi-vms-to-ahv-optional-reference-lab" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="a">
-<h2>A<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="lab-3a-manually-importing-esxi-vms-to-ahv-optional-reference-lab">
+<span id="a-manually-importing"></span><h1>Lab 3a: Manually importing ESXi VMs to AHV (Optional reference Lab)<a class="headerlink" href="#lab-3a-manually-importing-esxi-vms-to-ahv-optional-reference-lab" title="Permalink to this headline">¶</a></h1>
+<p>This lab is important as you may need to import a Virtual Disk manually. The steps are generally the same to import vDisks into Nutanix AHV. I suggest this as optional because tools like Move will be used in most cases.</p>
+<div class="section" id="preparing">
+<h2>Preparing<a class="headerlink" href="#preparing" title="Permalink to this headline">¶</a></h2>
+<p>A Prepare the VM on the ESXi host was installed with Nutanix VirtIO drivers.</p>
+<ol class="arabic simple">
+<li><p>Add the source hypervisor host IP address to the target AHV cluster Filesystem Whitelist.</p></li>
+<li><p>Use can use Storage vMotion for the VM disks to Nutanix AHV container datastore.</p></li>
+</ol>
+</div>
+<div class="section" id="converting">
+<h2>Converting<a class="headerlink" href="#converting" title="Permalink to this headline">¶</a></h2>
+<p>Converting the migrated Disks to AHV format</p>
+<ol class="arabic simple">
+<li><p>In the Prism UI, click Settings &gt; Image Configuration.</p></li>
+<li><p>In the Image Configuration Dialog Box, click Upload the Image</p></li>
+<li><p>In the Create Image dialog box, complete the indicated fields.</p></li>
+<li><p>Log in to the Prism UI using your Nutanix credentials.</p></li>
+<li><p>At the top left corner, click Home &gt; VM. The VM page appears.</p></li>
+<li><p>Click + Create VM in the corner of the page.</p></li>
+<li><p>CLONE FROM IMAGE SERVICE: Click the drop-down menu and choose the image you created previously.</p></li>
+<li><p>Power on VM</p></li>
+</ol>
 </div>
 </div>
 

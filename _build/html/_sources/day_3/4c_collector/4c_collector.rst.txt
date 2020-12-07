@@ -1,10 +1,12 @@
 .. _4c_collector:
 
 
-c: Collector
-**************
+Lab 4c: Collector
+*****************
 
+Install and Run Collector (Desktop Application)
+-----------------------------------------------
 
-
-C
---------
+#. Download “Nutanix Collector” from `Support Portal <https://portal.nutanix.com>`_
+#. Extract the package and launch application
+#. Choose the IP of the cluster and correct port and Username and password

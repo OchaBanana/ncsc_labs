@@ -1,10 +1,13 @@
 .. _4c_ncc:
 
----------------------------------------------------------
-d: Nutanix Cluster Check (NCC)
----------------------------------------------------------
 
+Lab 4d: Nutanix Cluster Check (NCC)
+***********************************
 
+Run NCC
+-------
 
-D
-++++++++
+#. SSH to CVM
+#. Run “nnc heath_check run_all”
+#. NCC output log: /home/nutanix/data/logs/ncc-output.log
+#. Note how you can repeat and
