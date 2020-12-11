@@ -163,7 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tools_vms/windows_vm.html#lab-test-vm-prep">LAB Test VM Prep:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 </ul>
 </li>
@@ -228,7 +228,7 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 
         </div>
@@ -242,20 +242,41 @@
 <p>In a remote install or deployment the IPMI was set ahead of time for remote access this command will now be use to set the HOST and CVM IP as well as Network settings.</p>
 <ol class="arabic">
 <li><dl class="simple">
-<dt>Continued from the previous console we can run the following command:</dt><dd><ul class="simple">
-<li><ol class="loweralpha simple">
-<li><p>“<em>cp ~/firstboot/fc_progress.py ~/nutanix-network-crashcart/</em>” - This file is missing in the crashcart path and has been fixed in future releases 5.16.1+</p></li>
+<dt>Make sure your console at <strong>AHV Host</strong></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">root&#64;&lt;Host</span> <span class="pre">IP&gt;</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Continued from the previous console we can run the following command:</dt><dd><ul>
+<li><ol class="loweralpha">
+<li><p>change directory to crashcart folder
+.. code-block:: bash</p>
+<blockquote>
+<div><p>cd /root/nutanix-network-crashcart/</p>
+</div></blockquote>
+</li>
 </ol>
 </li>
-<li><ol class="loweralpha simple" start="2">
-<li><p>“<em>cd /root/nutanix-network-crashcart/</em>” - change directory to crashcart folder</p></li>
-</ol>
+<li><ol class="loweralpha" start="2">
+<li><p>opens up Nutanix Network Configuration
+.. code-block:: bash</p>
+<blockquote>
+<div><p>./network_configuration</p>
+</div></blockquote>
 </li>
-<li><ol class="loweralpha simple" start="3">
-<li><p>“<em>./network_configuration</em>” – opens up Nutanix Network Configuration</p></li>
 </ol>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If cannot run this command it’s mean this file is missing in the crashcart path, but has been fixed in future releases 5.16.1+. You can copy the file following command:
+.. code-block:: bash</p>
+<blockquote>
+<div><p>cp ~/firstboot/fc_progress.py ~/nutanix-network-crashcart/</p>
+</div></blockquote>
+</div>
 </dd>
 </dl>
 </li>
