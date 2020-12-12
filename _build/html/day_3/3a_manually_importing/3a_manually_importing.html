@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 3a: Manually import VMs</title>
+    <title>Lab 3a: Manually import VMs (Optional)</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -68,7 +68,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html#using-the-crashcart-network-configuration-command">Using the crashcart network_configuration command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html#setting-up-cluster">Setting up cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html#add-network">Add Network</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html#click-upgrade-of-aos">1-Click upgrade of AOS</a></li>
 </ul>
@@ -92,7 +96,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#argument-help">Argument help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">Generate the executables manually using the spec file on all operating systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#documentation">Documentation</a></li>
 </ul>
 </li>
@@ -127,7 +130,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually import VMs (Optional)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#converting">Converting</a></li>
@@ -163,7 +166,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tools_vms/windows_vm.html#lab-test-vm-prep">LAB Test VM Prep:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 </ul>
 </li>
@@ -212,7 +215,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3a: Manually import VMs (Optional)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#converting">Converting</a></li>
@@ -230,15 +233,15 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 
         </div>
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="lab-3a-manually-import-vms">
-<span id="a-manually-importing"></span><h1>Lab 3a: Manually import VMs<a class="headerlink" href="#lab-3a-manually-import-vms" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-3a-manually-import-vms-optional">
+<span id="a-manually-importing"></span><h1>Lab 3a: Manually import VMs (Optional)<a class="headerlink" href="#lab-3a-manually-import-vms-optional" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="manually-importing-esxi-vms-to-ahv">
 <h2>Manually importing ESXi VMs to AHV<a class="headerlink" href="#manually-importing-esxi-vms-to-ahv" title="Permalink to this headline">¶</a></h2>
 <p>This lab is important as you may need to import a Virtual Disk manually. The steps are generally the same to import vDisks into Nutanix AHV. I suggest this as optional because tools like Move will be used in most cases.</p>
@@ -248,7 +251,7 @@
 <p>A Prepare the VM on the ESXi host was installed with Nutanix VirtIO drivers.</p>
 <ol class="arabic simple">
 <li><p>Add the source hypervisor host IP address to the target AHV cluster Filesystem Whitelist.</p></li>
-<li><p>Use can use Storage vMotion for the VM disks to Nutanix AHV container datastore.</p></li>
+<li><p>You can use Storage vMotion for the VM disks to Nutanix AHV container datastore.</p></li>
 </ol>
 </div>
 <div class="section" id="converting">

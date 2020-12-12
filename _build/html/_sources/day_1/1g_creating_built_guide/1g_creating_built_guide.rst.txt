@@ -48,17 +48,6 @@ To generate output in excel workbook format, use "-e" argument
 :: Multi cluster with multiple login credentials:
  ``generate_document.exe -c "Acme Barricades, Inc." -n "<Nutanix cluster 1>,<Nutanix cluster 2>" -m -e``
 
-To generate output in both (word document as well as excel workbook) format, use "-b" argument
-
-:: Single cluster:
- ``generate_document.exe -c "Acme Barricades, Inc." -n <Nutanix cluster IP or FQDN> -b``
-
-:: Multi cluster:
- ``generate_document.exe -c "Acme Barricades, Inc." -n "<Nutanix cluster 1>,<Nutanix cluster 2>" -b``
-
-:: Multi cluster with multiple login credentials:
- ``generate_document.exe -c "Acme Barricades, Inc." -n "<Nutanix cluster 1>,<Nutanix cluster 2>" -m -b``
-
 For multi cluster, enter multiple Nutanix Cluster FQDNs or IPs seperated by commas surrounded by quotes.
 
 .. note:: When running for multiple clusters, the IPs/FQDNs MUST be a comma delimited string enclosed by quotes.
@@ -155,11 +144,10 @@ Argument help
 .. raw:: html
 
   <p> usage: generate_document  &emsp;&emsp;&emsp;  [-h] -c CUSTOMER_NAME
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;(-n NUTANIX_CLUSTER_HOST | -f NUTANIX_CLUSTER_FILE)
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-t DOCUMENT_TEMPLATE] [-l DOCUMENT_LAYOUT]
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-o DOCUMENT_OUTPUT] [-m] [-mv] [-s DATA_SOURCE]
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-d] [-e] [-b] [-xv]
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-pv]
+  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;(-n NUTANIX_CLUSTER_HOSTS | -pc PRISM_CENTRAL_HOSTS | -f NUTANIX_CLUSTER_FILE)
+  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-t DOCUMENT_TEMPLATE] [-s DATA_SOURCE]
+  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-l DOCUMENT_LAYOUT] [-wl WORKBOOK_LAYOUT] [-a]
+  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;[-e] [-es] [-w] [-m] [-d] [-mv] [-pv] [-xv]
   <p>
   <br>optional arguments:
   <br>&emsp;-h, --help &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;show this help message and exit
@@ -177,28 +165,18 @@ Argument help
   <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;YAML data source file.
   <br>&emsp;-l DOCUMENT_LAYOUT, --document_layout DOCUMENT_LAYOUT
   <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;YAML document layout file.
-  <br>&emsp;-o DOCUMENT_OUTPUT, --document_output DOCUMENT_OUTPUT
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Word document output file.
   <br>&emsp;-wl WORKBOOK_LAYOUT, --workbook_layout WORKBOOK_LAYOUT
   <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Excel workbook layout file.
-  <br>&emsp;-a, --all_outputs Generates Word document, 
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Excel workbooks per cluster and Summary Workbook.
-  <br>&emsp;-e, --excel_output Generates &emsp;&emsp;Excel workbooks per cluster
-  <br>&emsp;-es, --excel_summary Generates 
-  <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Excel Summary Workbook.
-  <br>&emsp;-w, --word_output Generates &emsp;&ensp;&nbsp;Word documents per cluster
-  <br>&emsp;-m, --multi_user &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Multiple user accounts are required to access multiple clusters.
+  <br>&emsp;-a, --all_outputs &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&ensp;&nbsp;&nbsp;Generates Word document, Excel workbooks per cluster and Summary Workbook.
+  <br>&emsp;-e, --excel_output &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;Generates Excel workbooks per cluster
+  <br>&emsp;-es, --excel_summary &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;Generates Excel Summary Workbook.
+  <br>&emsp;-w, --word_output &emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&nbsp;&ensp;&nbsp;Generates Word documents per cluster
+  <br>&emsp;-m, --multi_user &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;Multiple user accounts are required to access multiple clusters.
   <br>&emsp;-d, --debug &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;Debug the document generaton workflow
   <br>&emsp;-mv, --multi_user_vcenter &emsp;&emsp;&emsp;&nbsp;&nbsp;Multiple user accounts are required to access different vcenters.
-  <br>&emsp;-pv, --ssl_port_vcenter &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Non-standard vCenter SSL port
-  <br>&emsp;-xv, --no_vcenter &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Exclude vCenter Info
+  <br>&emsp;-pv, --ssl_port_vcenter &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;&nbsp;Non-standard vCenter SSL port
+  <br>&emsp;-xv, --no_vcenter &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;Exclude vCenter Info
   </p>
-
-Generate the executables manually using the spec file on all operating systems
-------------------------------------------------------------------------------
-
-#. pyinstaller --onefile cluster-deploy-documenter.spec
-#. The executable will be generated inside the /dist directory
 
 Documentation
 -------------

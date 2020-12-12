@@ -68,7 +68,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#using-the-crashcart-network-configuration-command">Using the crashcart network_configuration command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1c_foundation_cvm/1c_foundation_cvm.html#setting-up-cluster">Setting up cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1c_foundation_cvm/1c_foundation_cvm.html#add-network">Add Network</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../1d_1_click_upgrade/1d_1_click_upgrade.html#click-upgrade-of-aos">1-Click upgrade of AOS</a></li>
 </ul>
@@ -92,7 +96,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../1g_creating_built_guide/1g_creating_built_guide.html#argument-help">Argument help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../1g_creating_built_guide/1g_creating_built_guide.html#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">Generate the executables manually using the spec file on all operating systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../1g_creating_built_guide/1g_creating_built_guide.html#documentation">Documentation</a></li>
 </ul>
 </li>
@@ -127,7 +130,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#converting">Converting</a></li>
@@ -215,7 +218,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_3/3b_using_move/3b_using_move.html">Lab 3b: Nutanix Move</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Fit Checks Using Fit Check Tools</span></p>
@@ -240,46 +243,41 @@
 <div class="section" id="using-the-crashcart-network-configuration-command">
 <h2>Using the crashcart network_configuration command<a class="headerlink" href="#using-the-crashcart-network-configuration-command" title="Permalink to this headline">¶</a></h2>
 <p>In a remote install or deployment the IPMI was set ahead of time for remote access this command will now be use to set the HOST and CVM IP as well as Network settings.</p>
-<ol class="arabic">
-<li><dl class="simple">
-<dt>Make sure your console at <strong>AHV Host</strong></dt><dd><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">root&#64;&lt;Host</span> <span class="pre">IP&gt;</span></code></p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt>Continued from the previous console we can run the following command:</dt><dd><ul>
-<li><ol class="loweralpha">
-<li><p>change directory to crashcart folder
-.. code-block:: bash</p>
+<ol class="arabic simple">
+<li><p>Make sure your console at <strong>AHV Host</strong>
+- <code class="docutils literal notranslate"><span class="pre">root&#64;&lt;host_name&gt;</span></code></p></li>
+<li><p>Continued from the previous console we can run the following command:</p></li>
+</ol>
 <blockquote>
-<div><p>cd /root/nutanix-network-crashcart/</p>
+<div><ul>
+<li><ol class="loweralpha simple">
+<li><p>change directory to crashcart folder</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /root/nutanix-network-crashcart/
+</pre></div>
+</div>
 </div></blockquote>
 </li>
+<li><ol class="loweralpha simple" start="2">
+<li><p>opens up Nutanix Network Configuration</p></li>
 </ol>
-</li>
-<li><ol class="loweralpha" start="2">
-<li><p>opens up Nutanix Network Configuration
-.. code-block:: bash</p>
 <blockquote>
-<div><p>./network_configuration</p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./network_configuration
+</pre></div>
+</div>
 </div></blockquote>
-</li>
-</ol>
 </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If cannot run this command it’s mean this file is missing in the crashcart path, but has been fixed in future releases 5.16.1+. You can copy the file following command:
-.. code-block:: bash</p>
-<blockquote>
-<div><p>cp ~/firstboot/fc_progress.py ~/nutanix-network-crashcart/</p>
-</div></blockquote>
+<p>If cannot run this command it’s mean this file is missing in the crashcart path, but has been fixed in future releases 5.16.1+. You can copy the file following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp ~/firstboot/fc_progress.py ~/nutanix-network-crashcart/
+</pre></div>
 </div>
-</dd>
-</dl>
-</li>
+</div>
+</div></blockquote>
+<ol class="arabic">
 <li><p>Note the network changes available to you on this local system:</p>
 <blockquote>
 <div><div class="figure align-default">

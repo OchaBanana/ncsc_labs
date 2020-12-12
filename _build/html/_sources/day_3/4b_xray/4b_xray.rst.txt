@@ -9,8 +9,8 @@ Install and Run X-Ray
 
 .. note:: If X-Ray is already deployed in your labs skip Steps 1-5
 
-#. Download X-Ray from Nutanix Support Portal
-#. Import the QCOW2 image v-disk into “Image Configurations” in AHV
+#. You can download X-Ray from `Support Portal <https://portal.nutanix.com/page/downloads?product=xray>`_
+#. Import the QCOW2 image v-disk into “Image Configurations” in AHV using url: *nfs://10.42.194.11/workshop_staging/xray3.7.qcow2*
 #. Build a new VM with 8 vCPUs, 1 Core, and 8GB RAM
 #. Clone the new disk from to Image Service
 #. Add a NIC and power on VM

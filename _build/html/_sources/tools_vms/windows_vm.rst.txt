@@ -11,11 +11,13 @@ LAB Test VM Prep:
 	     - **BLR:** \nfs://10.136.239.13/workshop_staging/Windows2012R2.qcow2
 	     - **PHX:** \nfs://10.42.194.11/workshop_staging/Windows2012R2.qcow2
 	     - **RTP:** \nfs://10.55.251.38/workshop_staging/Windows2012R2.qcow2
-#. Locate Windows 2012 VM and add a CDROM Click “Update” Click “+Add New Disk” under Disks
-#. Choose “CDROM” and
+
+#. Create VM
+#. Click “+Add New Disk” under Disks locate to "Windows2012R2.qcow2"
+#. Choose Primary for “Network”
 #. Power on the Windows2012 VM
 #. Launch Console and configure windows 2012
 #. Login and verify it is on the network Install NGT: Click the Windows 2012 VM and choose “Manage Guest Tools” Select all options and click “Submit”
-#. From the System browse to the CDROM drive and run the installation with all defaults
+#. From the Windows Conlose, browse to the CDROM drive and run the installation with all defaults
 #. Eject CDROM
-#. May two clones of this system to have more test systems
+#. May two clones of this system to have more test systems **make sure CDROM is ejected**

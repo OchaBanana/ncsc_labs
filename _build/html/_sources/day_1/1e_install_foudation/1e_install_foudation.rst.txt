@@ -12,7 +12,7 @@ This is important lab to understand Baremetal unfortunately we run through these
 Downloading the needed Foundation & AOS:
 ----------------------------------------
 
-#. Open a web browser and log in to the `Nutanix Support portal: <http://portal.nutanix.com.>`_
+#. Open a web browser and log in to the `Nutanix Support portal: <https://portal.nutanix.com/page/downloads?product=foundation>`_
 #. Download **Foundation VM**
 #. You will also need to download an **AOS/AHV** bundle
 #. Extract Tar (7 zip) and import **Foundation_VM-4.x.ovf** into VirtualBox

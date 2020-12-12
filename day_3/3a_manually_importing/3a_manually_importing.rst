@@ -1,8 +1,8 @@
 .. _3a_manually_importing:
 
 
-Lab 3a: Manually import VMs
-***************************
+Lab 3a: Manually import VMs (Optional)
+**************************************
 
 Manually importing ESXi VMs to AHV
 ----------------------------------
@@ -15,7 +15,7 @@ Preparing
 A Prepare the VM on the ESXi host was installed with Nutanix VirtIO drivers.
 
 #. Add the source hypervisor host IP address to the target AHV cluster Filesystem Whitelist.
-#. Use can use Storage vMotion for the VM disks to Nutanix AHV container datastore.
+#. You can use Storage vMotion for the VM disks to Nutanix AHV container datastore.
 
 Converting
 ----------

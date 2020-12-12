@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lab File" href="../download_file.html" />
+    <link rel="next" title="Lab Files Reference" href="../download_file.html" />
     <link rel="prev" title="Lab 4d: Nutanix Cluster Check (NCC)" href="../day_3/4d_ncc/4d_ncc.html" />
 
 <meta charset='utf-8'>
@@ -68,7 +68,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../day_1/1b_using_crashcart/1b_using_crashcart.html#using-the-crashcart-network-configuration-command">Using the crashcart network_configuration command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../day_1/1c_foundation_cvm/1c_foundation_cvm.html#setting-up-cluster">Setting up cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day_1/1c_foundation_cvm/1c_foundation_cvm.html#add-network">Add Network</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html#click-upgrade-of-aos">1-Click upgrade of AOS</a></li>
 </ul>
@@ -92,7 +96,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../day_1/1g_creating_built_guide/1g_creating_built_guide.html#argument-help">Argument help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../day_1/1g_creating_built_guide/1g_creating_built_guide.html#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">Generate the executables manually using the spec file on all operating systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../day_1/1g_creating_built_guide/1g_creating_built_guide.html#documentation">Documentation</a></li>
 </ul>
 </li>
@@ -127,7 +130,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../day_3/3a_manually_importing/3a_manually_importing.html#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../day_3/3a_manually_importing/3a_manually_importing.html#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../day_3/3a_manually_importing/3a_manually_importing.html#converting">Converting</a></li>
@@ -163,7 +166,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#lab-test-vm-prep">LAB Test VM Prep:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_file.html">Lab Files Reference</a></li>
 </ul>
 </ul>
 </li>
@@ -212,7 +215,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../day_3/3b_using_move/3b_using_move.html">Lab 3b: Nutanix Move</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Fit Checks Using Fit Check Tools</span></p>
@@ -228,7 +231,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#lab-test-vm-prep">LAB Test VM Prep:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download_file.html">Lab Files Reference</a></li>
 </ul>
 
         </div>
@@ -249,14 +252,15 @@
 </dd>
 </dl>
 </li>
-<li><p>Locate Windows 2012 VM and add a CDROM Click “Update” Click “+Add New Disk” under Disks</p></li>
-<li><p>Choose “CDROM” and</p></li>
+<li><p>Create VM</p></li>
+<li><p>Click “+Add New Disk” under Disks locate to “Windows2012R2.qcow2”</p></li>
+<li><p>Choose Primary for “Network”</p></li>
 <li><p>Power on the Windows2012 VM</p></li>
 <li><p>Launch Console and configure windows 2012</p></li>
 <li><p>Login and verify it is on the network Install NGT: Click the Windows 2012 VM and choose “Manage Guest Tools” Select all options and click “Submit”</p></li>
-<li><p>From the System browse to the CDROM drive and run the installation with all defaults</p></li>
+<li><p>From the Windows Conlose, browse to the CDROM drive and run the installation with all defaults</p></li>
 <li><p>Eject CDROM</p></li>
-<li><p>May two clones of this system to have more test systems</p></li>
+<li><p>May two clones of this system to have more test systems <strong>make sure CDROM is ejected</strong></p></li>
 </ol>
 </div>
 </div>

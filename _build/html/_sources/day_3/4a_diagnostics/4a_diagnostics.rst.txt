@@ -10,7 +10,16 @@ Run Diagnostics
 ---------------
 
 #. SSH to CVM
-#. Run script from /home/nutanix/diagnostics/diagnostics.py run
-#. View output from /home/nutanix/diagnostics/results
-#. Run script from /home/nutanix/diagnostics/diagnostics.py cleanup
+#. Run script from 
+   .. code-block::
+      /home/nutanix/diagnostics/diagnostics.py run
+
+#. View output from 
+   .. code-block::
+      /home/nutanix/diagnostics/results
+
+#. Run script from 
+   .. code-block::
+      /home/nutanix/diagnostics/diagnostics.py cleanup
+      
 #. Review the output

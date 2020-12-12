@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lab 3a: Manually import VMs" href="../../day_3/3a_manually_importing/3a_manually_importing.html" />
+    <link rel="next" title="Lab 3a: Manually import VMs (Optional)" href="../../day_3/3a_manually_importing/3a_manually_importing.html" />
     <link rel="prev" title="Lab 2d: Self Service Restore SSR" href="../2d_ssr/2d_ssr.html" />
 
 <meta charset='utf-8'>
@@ -68,7 +68,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html#using-the-crashcart-network-configuration-command">Using the crashcart network_configuration command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html#setting-up-cluster">Setting up cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html#add-network">Add Network</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html#click-upgrade-of-aos">1-Click upgrade of AOS</a></li>
 </ul>
@@ -92,7 +96,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#argument-help">Argument help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">Generate the executables manually using the spec file on all operating systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#documentation">Documentation</a></li>
 </ul>
 </li>
@@ -127,7 +130,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#converting">Converting</a></li>
@@ -163,7 +166,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tools_vms/windows_vm.html#lab-test-vm-prep">LAB Test VM Prep:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 </ul>
 </li>
@@ -221,7 +224,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_3/3b_using_move/3b_using_move.html">Lab 3b: Nutanix Move</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Fit Checks Using Fit Check Tools</span></p>
@@ -234,7 +237,7 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 
         </div>
@@ -252,9 +255,11 @@
 <li><p>From Data Protection Click “<strong>Remote Site</strong>” and select “<strong>Physical Cluster</strong>”</p></li>
 <li><p>Give Remote Site a name “&lt;<em>Your Initials</em>-REMOTE&gt;”</p></li>
 <li><p>Choose Capabilities “<strong>Disaster Recovery</strong>” this will allow Remote Recovery</p></li>
-<li><p>Enter the IP address of your partners cluster and choose “<strong>Add Site</strong>”</p></li>
+<li><p>Enter the IP address of your partners cluster and choose “<strong>Add Site</strong>”
+.. note:: Please note, we will do partnerships between <strong>Node-A&lt;&gt;Node-B</strong>, <strong>Node-C&lt;&gt;Node-D</strong></p></li>
 <li><p>Choose Cluster to Cluster network mapping</p></li>
 <li><p>Choose <strong>vStore A to VStore B</strong>.</p></li>
+<li><p>Click <strong>Save</strong></p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -267,7 +272,7 @@
 <li><p>Select your Protection Domain and click update</p></li>
 <li><p>Modify your Schedule and you will now see a remote site.</p></li>
 <li><p>Keep last 30 on Remote site</p></li>
-<li><p>Then Click “<strong>Create Schedule</strong>”</p></li>
+<li><p>Then Click “<strong>Save</strong>” the <strong>Close</strong></p></li>
 </ol>
 </div>
 <div class="section" id="take-a-few-snapshots">
@@ -301,10 +306,17 @@
 </ol>
 </dd>
 <dt>Scenario #2 is Site A has Failed and went down on its own you want to bring it back online in Site B</dt><dd><ol class="arabic simple">
+<li><p>Stop cluster at Site A <strong>(Please do “cluster stop” only at Node-A and Node-C)</strong></p></li>
 <li><p>From Site B Select your Protection Domain</p></li>
 <li><p>Choose “<strong>Activate</strong>”</p></li>
 <li><p>This will bring the protection domain’s VMs online on remote site.</p></li>
-<li><p>When Site A is considered back online the Migrate button should now be able to send the latest back to Site A.</p></li>
+<li><p>When Site A is considered back online.</p></li>
+<li><p>ssh to cvm of Site A</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">ncli</span> <span class="pre">-h</span> <span class="pre">true</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">pd</span> <span class="pre">deactivate_and_destroy_vms</span></code></p></li>
+<li><p>Go back to Site B</p></li>
+<li><p>the <strong>Migrate</strong> button should now be able to send the latest back to Site</p></li>
+<li><p>Click “<strong>Migrate</strong>” to migrate all VMs in PD back to Site A</p></li>
 </ol>
 </dd>
 </dl>

@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Lab 4a: Diagnostics" href="../4a_diagnostics/4a_diagnostics.html" />
-    <link rel="prev" title="Lab 3a: Manually import VMs" href="../3a_manually_importing/3a_manually_importing.html" />
+    <link rel="prev" title="Lab 3a: Manually import VMs (Optional)" href="../3a_manually_importing/3a_manually_importing.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -68,7 +68,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1b_using_crashcart/1b_using_crashcart.html#using-the-crashcart-network-configuration-command">Using the crashcart network_configuration command</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html">Lab 1c: Foundation from a CVM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html#setting-up-cluster">Setting up cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../day_1/1c_foundation_cvm/1c_foundation_cvm.html#add-network">Add Network</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html">Lab 1d: 1-Click upgrade</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1d_1_click_upgrade/1d_1_click_upgrade.html#click-upgrade-of-aos">1-Click upgrade of AOS</a></li>
 </ul>
@@ -92,7 +96,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#argument-help">Argument help</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#generate-the-executables-manually-using-the-spec-file-on-all-operating-systems">Generate the executables manually using the spec file on all operating systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_1/1g_creating_built_guide/1g_creating_built_guide.html#documentation">Documentation</a></li>
 </ul>
 </li>
@@ -127,7 +130,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html#converting">Converting</a></li>
@@ -163,7 +166,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../tools_vms/windows_vm.html#lab-test-vm-prep">LAB Test VM Prep:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 </ul>
 </li>
@@ -212,7 +215,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 3b: Nutanix Move</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#using-move-vms-to-migrate-from-esxi-to-ahv">Using Move VMs to migrate from ESXi to AHV</a></li>
 </ul>
@@ -228,7 +231,7 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tools_vms/windows_vm.html">Lab Test VM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../download_file.html">Lab Files Reference</a></li>
 </ul>
 
         </div>
@@ -240,21 +243,29 @@
 <div class="section" id="using-move-vms-to-migrate-from-esxi-to-ahv">
 <h2>Using Move VMs to migrate from ESXi to AHV<a class="headerlink" href="#using-move-vms-to-migrate-from-esxi-to-ahv" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
+<li><p>uplaod <strong>Move</strong> image using url: <em>nfs://10.42.194.11/workshop_staging/move-3.6.0.qcow2</em></p></li>
+<li><dl class="simple">
+<dt>Create Move VM</dt><dd><ul class="simple">
+<li><p><strong>vCPU:</strong> 2</p></li>
+<li><p><strong>Core:</strong> 2</p></li>
+<li><p><strong>Memory:</strong> 4</p></li>
+<li><p><strong>Network:</strong> Primary</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 <li><p>Under VMs Power on “MOVE VM”</p></li>
-<li><p>Choose “Launch Console”</p></li>
-<li><p>Login using User: admin Password: Nutanix/4u</p></li>
-<li><p>Choose no to keep DHCP IP</p></li>
 <li><p>Under VMs in Prism you should see the IPs assigned to Move</p></li>
 <li><p>Open a internet browse to <a class="reference external" href="http:/">http:/</a>/&lt;Move_IP&gt;</p></li>
 <li><p>Reset password and then login</p></li>
 <li><dl class="simple">
 <dt>Choose a Source Environment</dt><dd><ul class="simple">
 <li><ol class="loweralpha simple">
-<li><p>Add Source ESXi Fill in the needed information provided by instructor and click “Add”</p></li>
+<li><p>Click <strong>+ Add Environment</strong> to add Source ESXi Fill in the needed information provided by instructor and click “Add”</p></li>
 </ol>
 </li>
 <li><ol class="loweralpha simple" start="2">
-<li><p>Add a Target Fill in your cluster information and click “Add”</p></li>
+<li><p>Click <strong>+ Add Environment</strong> to add add a Target Fill in your cluster information and click “Add”</p></li>
 </ol>
 </li>
 <li><ol class="loweralpha simple" start="3">
