@@ -9,11 +9,15 @@ Run NCC
 
 #. SSH to CVM
 #. Run 
-   .. code-Block::
+
+   .. code-block:: bash
+
       nnc heath_check run_all
 
 #. NCC output log: 
-   .. code-block::
+
+   .. code-block:: bash
+   
       cat /home/nutanix/data/logs/ncc-output.log
-      
+
 #. Note how you can repeat and run individual tests. Identify how to gather resolution steps and solutions for your Fit Check report.
