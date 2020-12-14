@@ -122,11 +122,17 @@ Each student will be assigned a Remote lab for at least 48hrs. You should get an
 Lab Access Methods
 ==================
 
+Please see or download `Lab Access Information <https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing>`_ document.
+
 VPN option: Pulse Secure VPN Client
 -----------------------------------
 
 1. If client already installed skip to step 5
 2. To download the client, login to https://xlv-uswest1.nutanix.com or https://xlv-useast1.nutanix.com using the supplied user credentials
+  - Direct Download\
+     - `Windows 32 bit <https://noc.rmutp.ac.th/wp-content/uploads/32bitinstaller.msi>`_
+     - `Windows 64 bit <https://noc.rmutp.ac.th/wp-content/uploads/64bitinstaller.msi>`_
+     - `Mac OS <https://noc.rmutp.ac.th/wp-content/uploads/macinstaller.dmg>`_
 3. Download and install client
 4. Logout of the Web UI
 5. Open client and **ADD** a connection with the following details:
@@ -142,6 +148,12 @@ For RTP:
   - **Type** - Policy Secure (UAC) or Connection Server
   - **Name** - X-Labs - RTP
   - **Server URL** - xlv-useast1.nutanix.com
+
+For BLR:
+
+  - **Type:** Policy Secure (UAC) or Connection Server(VPN)\
+  - **Name:** X-Labs - BLR
+  - **Server URL:** xlv-blr.xlabs.nutanix.com\
 
 6. Once setup, login with the supplied credentials
 
