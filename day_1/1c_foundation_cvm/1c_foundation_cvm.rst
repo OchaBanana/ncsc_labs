@@ -8,8 +8,8 @@ Foundation software is installed on each CVM when they are imaged out of the fac
 
 
 #. Open a web browser to your CVM IP: `http://<CVM_IP:8000>` **USE YOUR ASSIGNED CVM IP**
-#. Page 1. Start fill form with your Assigned lab Network IP settings provided and hit “Next”
-#. Page 2. Nodes notice your remaining nodes should detect. Because they are previously configured the IPs autofilled but normally out of factory they will require you put your desired IPs. **ONLY SELECT YOUR NODE IN THIS LAB**. We will be making a single node cluster. Give it a Host name of HOST-<initials>.
+#. Page 1. Start fill form with your `Assigned lab Network IP <https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing>`_ settings provided and hit “Next”
+#. Page 2. Nodes notice your remaining nodes should detect. Because they are previously configured the IPs autofilled but normally out of factory they will require you put your `desired IPs <https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing>`_. **ONLY SELECT YOUR NODE IN THIS LAB**. We will be making a single node cluster. Give it a Host name of **HOST-**<*initials*>.
 #. Page 3. Cluster page, let’s choose to “Skip automatic cluster formation” and give it 24GB of memory and hit “Next”. Note only a select few models are supported in Single-node cluster in foundation we will use “Skip” and do this manually since we do not have any single node models in the labs.
 #. Page 4. AOS we will keep the default factory imaged software “we will skip AOS installation” and hit “Next”
 #. Page 5. Hypervisor same as previous step we will skip reimaging and hit “Next”
@@ -21,7 +21,7 @@ Foundation software is installed on each CVM when they are imaged out of the fac
 
         cluster -s <cvm_ip> --cluster_function_list=one_node_cluster create
 
-#. When completed. Open a web browser to IP: `http://<CVM_IP>` . Use admin with the Prism UI password “Nutanix/4u” provided in the lab. (You may change the password to one you’d like to use)
+#. When completed. Open a web browser to IP: `http://<CVM_IP>` . Use admin with the Prism UI password “Nutanix/4u” provided in the lab. (You may change the password to one you’d like to use) *Recommended to use Labs Password* **nx2TechXXX!**
 
 Setting up cluster
 ------------------
