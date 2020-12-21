@@ -130,7 +130,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#manually-importing-esxi-vms-to-ahv">Manually importing ESXi VMs to AHV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#preparing">Preparing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html#converting">Converting</a></li>
@@ -219,7 +219,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Data Migrations</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../day_3/3a_manually_importing/3a_manually_importing.html">Lab 3a: Manually import VMs (Optional)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../day_3/3b_using_move/3b_using_move.html">Lab 3b: Nutanix Move</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Day 3 Fit Checks Using Fit Check Tools</span></p>
@@ -244,8 +244,8 @@
 <p>Foundation software is installed on each CVM when they are imaged out of the factory. In some case the hardware is sold “Software Only” which means software must be installed “Baremetal”. In this case for remote installs Foundation will need to be installed on a local system in order to image the nodes. Please see also Baremetal steps in Field Installation Guide.</p>
 <ol class="arabic">
 <li><p>Open a web browser to your CVM IP: <cite>http://&lt;CVM_IP:8000&gt;</cite> <strong>USE YOUR ASSIGNED CVM IP</strong></p></li>
-<li><p>Page 1. Start fill form with your Assigned lab Network IP settings provided and hit “Next”</p></li>
-<li><p>Page 2. Nodes notice your remaining nodes should detect. Because they are previously configured the IPs autofilled but normally out of factory they will require you put your desired IPs. <strong>ONLY SELECT YOUR NODE IN THIS LAB</strong>. We will be making a single node cluster. Give it a Host name of HOST-&lt;initials&gt;.</p></li>
+<li><p>Page 1. Start fill form with your <a class="reference external" href="https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing">Assigned lab Network IP</a> settings provided and hit “Next”</p></li>
+<li><p>Page 2. Nodes notice your remaining nodes should detect. Because they are previously configured the IPs autofilled but normally out of factory they will require you put your <a class="reference external" href="https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing">desired IPs</a>. <strong>ONLY SELECT YOUR NODE IN THIS LAB</strong>. We will be making a single node cluster. Give it a Host name of <strong>HOST-</strong>&lt;<em>initials</em>&gt;.</p></li>
 <li><p>Page 3. Cluster page, let’s choose to “Skip automatic cluster formation” and give it 24GB of memory and hit “Next”. Note only a select few models are supported in Single-node cluster in foundation we will use “Skip” and do this manually since we do not have any single node models in the labs.</p></li>
 <li><p>Page 4. AOS we will keep the default factory imaged software “we will skip AOS installation” and hit “Next”</p></li>
 <li><p>Page 5. Hypervisor same as previous step we will skip reimaging and hit “Next”</p></li>
@@ -258,7 +258,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p>When completed. Open a web browser to IP: <cite>http://&lt;CVM_IP&gt;</cite> . Use admin with the Prism UI password “Nutanix/4u” provided in the lab. (You may change the password to one you’d like to use)</p></li>
+<li><p>When completed. Open a web browser to IP: <cite>http://&lt;CVM_IP&gt;</cite> . Use admin with the Prism UI password “Nutanix/4u” provided in the lab. (You may change the password to one you’d like to use) <em>Recommended to use Labs Password</em> <strong>nx2TechXXX!</strong></p></li>
 </ol>
 <div class="section" id="setting-up-cluster">
 <h2>Setting up cluster<a class="headerlink" href="#setting-up-cluster" title="Permalink to this headline">¶</a></h2>
