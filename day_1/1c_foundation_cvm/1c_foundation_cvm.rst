@@ -26,10 +26,11 @@ Foundation software is installed on each CVM when they are imaged out of the fac
 Setting up cluster
 ------------------
 
+Please following `Assigned lab Network IP <https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing>`_
+
 #. Cluster Info: Click at **"Unnamed"** cluster name beside **X** icon at top-left.
    - Cluster name: Your assigned cluster-name or disign by yourself
    - Cluster IP: Your assigned IP (*CVM_IP + 1*)
-   - Cluster Data Services IP: Your assigned IP (*CVM_IP + 2*)
 
 #. Add DNS: To **Home** menu > **Settings** > Name Servers
    - fill 10.42.194.10 then click **+Add**
@@ -40,13 +41,16 @@ Setting up cluster
 Add Network
 -----------
 
+Please following `Assigned lab Network IP <https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing>`_
+
 #. **Network Config**
 #. **+ Create Network**
 	- **Network Name:** Primary
 	- **VLAN ID:** 0
 	- Select **Enable IP address management**
 	- **Network IP Address / Prefix Length:** *<CVM_IP -6>/25*
-	- **Gateway IP Address:** 10.42.194.10
+	- **Gateway IP Address:** 10.xx.xx.1
+	- **DNS:** 10.42.194.10
 	- Laeve blank for Domain Search, Domain Name, TFTP Server Name, Boot File Name
 	- ** + Create Pool**
 	   - **Start Address:** Your assigned IP (*CVM_IP + 12*)
