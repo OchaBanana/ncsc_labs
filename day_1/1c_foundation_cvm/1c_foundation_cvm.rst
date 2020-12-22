@@ -48,12 +48,12 @@ Please following `Assigned lab Network IP <https://docs.google.com/spreadsheets/
 	- **Network Name:** Primary
 	- **VLAN ID:** 0
 	- Select **Enable IP address management**
-	- **Network IP Address / Prefix Length:** *<CVM_IP -6>/25*
+	- **Network IP Address / Prefix Length:** *10.xx.xx.0/25*
 	- **Gateway IP Address:** 10.xx.xx.1
 	- **DNS:** 10.42.194.10
 	- Laeve blank for Domain Search, Domain Name, TFTP Server Name, Boot File Name
 	- ** + Create Pool**
-	   - **Start Address:** Your assigned IP (*CVM_IP + 12*)
-	   - **End Address:** Your assigned IP (*CVM_IP + 26*)
+	   - **Start Address:** Your assigned IP
+	   - **End Address:** Your assigned IP 
 
 #. **Save**
