@@ -65,7 +65,7 @@ Scenario #2 is Site A has Failed and went down on its own you want to bring it b
   #. When Site A is considered back online.
   #. ssh to cvm of Site A
   #. run ``ncli -h true``
-  #. run ``pd deactivate_and_destroy_vms``
+  #. run ``pd deactivate_and_destroy_vms name=<PD_Name> force=true``
   #. Go back to Site B
   #. the **Migrate** button should now be able to send the latest back to Site
   #. Click "**Migrate**" to migrate all VMs in PD back to Site A
