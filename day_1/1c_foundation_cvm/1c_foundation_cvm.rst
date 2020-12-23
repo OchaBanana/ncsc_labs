@@ -41,11 +41,11 @@ Please following `Assigned lab Network IP <https://docs.google.com/spreadsheets/
 Add Network
 -----------
 
-Please following `Assigned lab Network IP <https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing>`_
-
+Pease following `Assigned lab Network IP <https://docs.google.com/spreadsheets/d/1QmYpmG1lo_3bo3iYONy-uPzIQGvnm4lHf1lx8URXj7Y/edit?usp=sharing>`_
+l
 #. **Network Config**
 #. **+ Create Network**
-	- **Network Name:** Primary
+	- **Network Name:** Primary-<*Initial*>
 	- **VLAN ID:** 0
 	- Select **Enable IP address management**
 	- **Network IP Address / Prefix Length:** *10.xx.xx.0/25*

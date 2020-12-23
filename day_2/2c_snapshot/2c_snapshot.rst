@@ -22,7 +22,7 @@ Capabilities in the Nutanix solution
 #. Log into Prism
 #. Click on “+ Protection Domain” button > “Async DR”
 #. Create a protection domain with a unique name by going through the wizard
-     - a. Name the protection domain ex “PD-Prod”
+     - a. Name the protection domain ex “PD-Prod-<*Initial*>”
      - b. Choose VMs to include in the protection domain
              - choose the cloned VM you created in the :ref:`windows_vm`
              - choose “Protect Selected Entities” click Next

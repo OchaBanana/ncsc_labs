@@ -53,7 +53,7 @@ Snapshot to Remote Site & use Migrate/Activate
 ----------------------------------------------
 
 Scenario #1 is you want to move the VM from site A to Site B.
-  #. From Site A Select your Protection Domain
+  #. From Site A Select your Protection Domain **(Site A can be Node-A and Node-B at the same time)**
   #. Choose “**Migrate**” and notice all the VMs in that Protection Domain should be removed from Site A and powered on in Site B (Fail-Over)
   #. Feel free to continue work on the VM and make changes and repeat those steps 1&2 to migrate the Protection Domain back to Site A. (Fail-Back)
 
