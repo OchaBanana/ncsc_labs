@@ -12,7 +12,7 @@ Run NCC
 
    .. code-block:: bash
 
-      ncc heath_check run_all
+      ncc health_checks run_all
 
 #. NCC output log: 
 
